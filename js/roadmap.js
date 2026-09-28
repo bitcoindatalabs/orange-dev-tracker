@@ -6,7 +6,7 @@ const isLocal = window.location.hostname === 'localhost' || window.location.host
 
 const TRACKING_URL = isLocal
     ? '../orange-dev-data/output/tracker/tracking_issues.json'
-    : 'https://raw.githubusercontent.com/sorukumar/orange-dev-data/main/output/tracker/tracking_issues.json';
+    : 'https://raw.githubusercontent.com/bitcoindatalabs/orange-dev-data/main/output/tracker/tracking_issues.json';
 
 let currentProject = null;
 let activeFilter = 'all';

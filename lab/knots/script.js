@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         const dataUrl = isLocal 
             ? '../../orange-dev-data/output/lab/knots_comparison.json' 
-            : 'https://raw.githubusercontent.com/sorukumar/orange-dev-data/main/output/lab/knots_comparison.json';
+            : 'https://raw.githubusercontent.com/bitcoindatalabs/orange-dev-data/main/output/lab/knots_comparison.json';
             
         const response = await fetch(dataUrl);
         if (!response.ok) throw new Error('Failed to load JSON');

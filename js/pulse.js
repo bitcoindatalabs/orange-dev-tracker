@@ -6,11 +6,11 @@ const isLocal = window.location.hostname === 'localhost' || window.location.host
 
 const PULSE_URL = isLocal
     ? '../orange-dev-data/output/shared/discussions_pulse.json'
-    : 'https://raw.githubusercontent.com/sorukumar/orange-dev-data/main/output/shared/discussions_pulse.json';
+    : 'https://raw.githubusercontent.com/bitcoindatalabs/orange-dev-data/main/output/shared/discussions_pulse.json';
 
 const ECOSYSTEM_URL = isLocal
     ? '../orange-dev-data/output/shared/ecosystem_summary.json'
-    : 'https://raw.githubusercontent.com/sorukumar/orange-dev-data/main/output/shared/ecosystem_summary.json';
+    : 'https://raw.githubusercontent.com/bitcoindatalabs/orange-dev-data/main/output/shared/ecosystem_summary.json';
 
 let pulseData = null;
 let activeWindow = '90d';

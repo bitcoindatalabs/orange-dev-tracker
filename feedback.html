@@ -175,7 +175,7 @@
                 <h1>Tracker Roadmap</h1>
                 <p>Features actively prioritized for Data Pipeline & Codebase Analytics.</p>
             </div>
-            <a href="https://github.com/sorukumar/orange-dev-tracker/issues/new?template=tracker-feature.md" target="_blank" class="btn-propose">
+            <a href="https://github.com/bitcoindatalabs/orange-dev-tracker/issues/new?template=tracker-feature.md" target="_blank" class="btn-propose">
                 <i class="fas fa-plus"></i> Suggest Feature
             </a>
         </header>
@@ -201,7 +201,7 @@
             
             try {
                 // Fetch issues labeled "Tracker"
-                const response = await fetch('https://api.github.com/repos/sorukumar/orange-dev-tracker/issues?state=open&labels=Tracker&sort=created&direction=asc');
+                const response = await fetch('https://api.github.com/repos/bitcoindatalabs/orange-dev-tracker/issues?state=open&labels=Tracker&sort=created&direction=asc');
                 if (!response.ok) throw new Error('Failed to fetch from GitHub API');
                 
                 const issues = await response.json();
@@ -244,7 +244,7 @@
                 loadEl.innerHTML = `
                     <i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i>
                     <p>Unable to load roadmap from GitHub.</p>
-                    <a href="https://github.com/sorukumar/orange-dev-tracker/issues?q=is%3Aissue+is%3Aopen+label%3ATracker" target="_blank" style="color: var(--primary); font-weight: 600;">View directly on GitHub →</a>
+                    <a href="https://github.com/bitcoindatalabs/orange-dev-tracker/issues?q=is%3Aissue+is%3Aopen+label%3ATracker" target="_blank" style="color: var(--primary); font-weight: 600;">View directly on GitHub →</a>
                 `;
             }
         });

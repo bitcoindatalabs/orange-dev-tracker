@@ -10,7 +10,7 @@ const DATA_PATH_PREFIX = (function () {
         }
         return '../orange-dev-data/';
     }
-    return 'https://raw.githubusercontent.com/sorukumar/orange-dev-data/main/';
+    return 'https://raw.githubusercontent.com/bitcoindatalabs/orange-dev-data/main/';
 })();
 
 /**

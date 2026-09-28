@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: 'Health', url: 'health.html' }
             ],
             footerLinks: [
-                { name: 'Methodology & Definitions', url: 'https://tracker.bitcoindatalabs.org/methodology.html' }
+                { name: 'Methodology & Definitions', url: 'methodology.html' }
             ],
             feedbackUrl: 'feedback.html',
             suiteLinks: [
