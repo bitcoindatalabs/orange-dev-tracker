@@ -4,7 +4,7 @@
   "target_month": "2026-09",
   "target_month_formatted": "September 2026",
   "report_title": "State of Bitcoin Core \u2014 Monthly Intelligence Report",
-  "generated_at": "2026-10-05T12:13:42",
+  "generated_at": "2026-10-05T12:31:29",
   "data_through": "2026-10-05",
   "months": [
     "2025-09",
@@ -41,7 +41,7 @@
     "takeaways": [
       {
         "label": "What Shipped",
-        "text": "Wallet: Add importdescriptors interface (#34861); Wallet:  Add `maxfeerate` wallet startup option (#29278)."
+        "text": "Wallet: Add importdescriptors interface (#34861); Wallet: Add `maxfeerate` wallet startup option (#29278)."
       },
       {
         "label": "Review Health",
@@ -519,8 +519,8 @@
       },
       {
         "pr": 29278,
-        "title": "Wallet:  Add `maxfeerate` wallet startup option",
-        "short_title": "Wallet:  Add `maxfeerate` wallet startup option",
+        "title": "Wallet: Add `maxfeerate` wallet startup option",
+        "short_title": "Wallet: Add `maxfeerate` wallet startup option",
         "summary": "This PR introduces the `maxfeerate` wallet startup configuration option to Bitcoin Core.",
         "domain": "Wallet & User Tools",
         "subsystem": "Wallet",
@@ -589,8 +589,8 @@
           },
           {
             "pr": 29278,
-            "title": "Wallet:  Add `maxfeerate` wallet startup option",
-            "short_title": "Wallet:  Add `maxfeerate` wallet startup option",
+            "title": "Wallet: Add `maxfeerate` wallet startup option",
+            "short_title": "Wallet: Add `maxfeerate` wallet startup option",
             "summary": "This PR introduces the `maxfeerate` wallet startup configuration option to Bitcoin Core.",
             "domain": "Wallet & User Tools",
             "subsystem": "Wallet",
@@ -1302,7 +1302,7 @@
         "url": "https://delvingbitcoin.org/t/standardizing-an-exposure-classification-for-existing-outputs-pre-bip/2866/1"
       },
       {
-        "title": "Standardizing public key exposure classification for  existing outputs",
+        "title": "Standardizing public key exposure classification for existing outputs",
         "source": "Mailing List",
         "messages": 4,
         "authors": [
