@@ -1,0 +1,20 @@
+[
+  {
+    "month": "2026-09",
+    "name": "September 2026",
+    "pdf": "https://raw.githubusercontent.com/bitcoindatalabs/bdl-report-assets/main/bitcoin/state_of_bitcoin_core_202609.pdf",
+    "isLatest": true
+  },
+  {
+    "month": "2026-08",
+    "name": "August 2026",
+    "pdf": null,
+    "isLatest": false
+  },
+  {
+    "month": "2026-07",
+    "name": "July 2026",
+    "pdf": null,
+    "isLatest": false
+  }
+]

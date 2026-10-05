@@ -1,185 +1,1384 @@
 {
+  "schema": "mbr-v2",
+  "palette": "obsidian",
   "target_month": "2026-08",
   "target_month_formatted": "August 2026",
-  "metrics": {
-    "total_contributors": 0,
-    "total_prs": 0,
-    "monthly_active_contributors": 0,
-    "monthly_new_contributors": 0
+  "report_title": "State of Bitcoin Core \u2014 Monthly Intelligence Report",
+  "generated_at": "2026-10-05T11:51:45",
+  "data_through": "2026-10-05",
+  "months": [
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "month_labels": [
+    "Aug '25",
+    "Sep '25",
+    "Oct '25",
+    "Nov '25",
+    "Dec '25",
+    "Jan '26",
+    "Feb '26",
+    "Mar '26",
+    "Apr '26",
+    "May '26",
+    "Jun '26",
+    "Jul '26",
+    "Aug '26"
+  ],
+  "headline": {
+    "title": "August merges rose 94% YoY to 149 led by Introduce Mempool Based Fee Estimation to reduce overestimat\u2026 \u2014 Michael Ford merged 54%.",
+    "takeaways": [
+      {
+        "label": "What Shipped",
+        "text": "Introduce Mempool Based Fee Estimation to reduce overestimat\u2026 (#34075); Txindex: hash keys and pack positions to reduce disk usage (#35531)."
+      },
+      {
+        "label": "Review Health",
+        "text": "126 human reviewers (+8% YoY); median time-to-merge 5.8d (12-mo median 8.2d)."
+      },
+      {
+        "label": "Governance",
+        "text": "Merges by Michael Ford 54%, Sebastian Kung 28%, Ava Chow 13%. 388 PRs open at month end, 67 older than a year."
+      }
+    ]
   },
-  "raw_data": {
-    "ui": {},
-    "growth": {
-      "xAxis": [
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
+  "kpis": [
+    {
+      "key": "merged",
+      "label": "PRs merged \u00b7 bitcoin/bitcoin",
+      "display": "149",
+      "sub": "vs 77 in Aug '25",
+      "unit": "",
+      "value": 149,
+      "yoy_pct": 93.5064935064935,
+      "yoy_prev": 77,
+      "mom_pct": 28.448275862068968,
+      "trend": [
+        77,
+        85,
+        99,
+        91,
+        90,
+        143,
+        118,
+        153,
+        89,
+        112,
+        107,
+        116,
+        149
       ],
-      "series": [
-        {
-          "name": "New Contributors",
-          "type": "bar",
-          "stack": "total",
-          "data": [
-            2,
-            3,
-            82,
-            36,
-            63,
-            123,
-            79,
-            92,
-            96,
-            123,
-            98,
-            96,
-            93,
-            64,
-            42,
-            48,
-            59,
-            69
-          ]
-        },
-        {
-          "name": "Veterans",
-          "type": "bar",
-          "stack": "total",
-          "data": [
-            0,
-            2,
-            1,
-            20,
-            23,
-            31,
-            59,
-            57,
-            64,
-            75,
-            86,
-            91,
-            94,
-            98,
-            89,
-            85,
-            82,
-            85
-          ]
-        }
-      ]
+      "median_12": 103.0,
+      "p10_12": 85.4,
+      "p90_12": 140.5
     },
-    "stack": {
-      "data": [
-        {
-          "name": "C++",
-          "value": 371883
-        },
-        {
-          "name": "Python",
-          "value": 91394
-        },
-        {
-          "name": "C",
-          "value": 32111
-        },
-        {
-          "name": "Shell",
-          "value": 3694
-        },
-        {
-          "name": "Assembly",
-          "value": 925
-        },
-        {
-          "name": "Other",
-          "value": 499,
-          "details": "Web (499 LOC)"
-        }
+    {
+      "key": "ttm_p50",
+      "label": "Median time-to-merge",
+      "display": "5.8",
+      "sub": "p90: 98.1d",
+      "unit": "d",
+      "value": 5.8,
+      "yoy_pct": 13.725490196078436,
+      "yoy_prev": 5.1,
+      "mom_pct": -31.764705882352946,
+      "trend": [
+        5.1,
+        5.0,
+        8.9,
+        7.0,
+        10.1,
+        5.5,
+        7.8,
+        9.8,
+        11.8,
+        18.4,
+        8.0,
+        8.5,
+        5.8
       ],
-      "metadata": {
-        "top_languages": [
-          "C++",
-          "Python",
-          "C",
-          "Shell",
-          "Assembly"
+      "median_12": 8.25,
+      "p10_12": 5.14,
+      "p90_12": 11.63
+    },
+    {
+      "key": "reviewers",
+      "label": "Active human reviewers",
+      "display": "126",
+      "sub": "vs 117 in Aug '25",
+      "unit": "",
+      "value": 126,
+      "yoy_pct": 7.6923076923076925,
+      "yoy_prev": 117,
+      "mom_pct": 10.526315789473683,
+      "trend": [
+        117,
+        134,
+        130,
+        105,
+        92,
+        109,
+        118,
+        131,
+        131,
+        129,
+        110,
+        114,
+        126
+      ],
+      "median_12": 117.5,
+      "p10_12": 105.4,
+      "p90_12": 131.0
+    },
+    {
+      "key": "open",
+      "label": "Open PR backlog (month end)",
+      "display": "388",
+      "sub": "median age 90d \u00b7 67 older than 1 yr",
+      "unit": "",
+      "value": 388,
+      "yoy_pct": 12.138728323699421,
+      "yoy_prev": 346,
+      "mom_pct": 6.887052341597796,
+      "trend": [
+        346,
+        380,
+        336,
+        345,
+        346,
+        364,
+        354,
+        347,
+        349,
+        333,
+        341,
+        363,
+        388
+      ],
+      "median_12": 346.5,
+      "p10_12": 336.5,
+      "p90_12": 363.9
+    },
+    {
+      "key": "new_contributors",
+      "label": "First-time merged contributors",
+      "display": "11",
+      "sub": "26 opened their first PR this month",
+      "unit": "",
+      "value": 11,
+      "yoy_pct": 1000.0,
+      "yoy_prev": 1,
+      "mom_pct": 83.33333333333334,
+      "trend": [
+        1,
+        1,
+        6,
+        4,
+        5,
+        6,
+        4,
+        5,
+        8,
+        6,
+        6,
+        6,
+        11
+      ],
+      "median_12": 5.5,
+      "p10_12": 1.3000000000000003,
+      "p90_12": 6.0
+    }
+  ],
+  "scorecard": [
+    {
+      "group": "Throughput",
+      "metric": "Merged PRs (bitcoin/bitcoin)",
+      "display": "149",
+      "mom": "+28.4%",
+      "yoy": "+93.5%",
+      "median_12": "103",
+      "trend": [
+        77,
+        85,
+        99,
+        91,
+        90,
+        143,
+        118,
+        153,
+        89,
+        112,
+        107,
+        116,
+        149
+      ],
+      "status": "High",
+      "good_direction": "up"
+    },
+    {
+      "group": "Throughput",
+      "metric": "Merged PRs (bitcoin-core/gui)",
+      "display": "3",
+      "mom": "-1",
+      "yoy": "+3",
+      "median_12": "2",
+      "trend": [
+        0,
+        2,
+        0,
+        5,
+        2,
+        3,
+        4,
+        1,
+        0,
+        1,
+        0,
+        4,
+        3
+      ],
+      "status": "Normal",
+      "good_direction": "up"
+    },
+    {
+      "group": "Throughput",
+      "metric": "Merged PRs (secp256k1 library)",
+      "display": "13",
+      "mom": "-2",
+      "yoy": "+8",
+      "median_12": "7",
+      "trend": [
+        5,
+        11,
+        6,
+        4,
+        6,
+        8,
+        14,
+        8,
+        3,
+        1,
+        15,
+        15,
+        13
+      ],
+      "status": "Normal",
+      "good_direction": "up"
+    },
+    {
+      "group": "Velocity",
+      "metric": "Median time-to-merge (p50)",
+      "display": "5.8d",
+      "mom": "-2.7d",
+      "yoy": "+0.7d",
+      "median_12": "8.2d",
+      "trend": [
+        5.1,
+        5.0,
+        8.9,
+        7.0,
+        10.1,
+        5.5,
+        7.8,
+        9.8,
+        11.8,
+        18.4,
+        8.0,
+        8.5,
+        5.8
+      ],
+      "status": "Normal",
+      "good_direction": "down"
+    },
+    {
+      "group": "Velocity",
+      "metric": "Long-tail time-to-merge (p90)",
+      "display": "98.1d",
+      "mom": "-53.1d",
+      "yoy": "+3.3d",
+      "median_12": "158.4d",
+      "trend": [
+        94.8,
+        36.3,
+        156.3,
+        177.0,
+        168.5,
+        104.7,
+        195.7,
+        164.0,
+        160.6,
+        238.5,
+        69.9,
+        151.2,
+        98.1
+      ],
+      "status": "Normal",
+      "good_direction": "down"
+    },
+    {
+      "group": "Review Rigor",
+      "metric": "Unique human reviewers",
+      "display": "126",
+      "mom": "+10.5%",
+      "yoy": "+7.7%",
+      "median_12": "118",
+      "trend": [
+        117,
+        134,
+        130,
+        105,
+        92,
+        109,
+        118,
+        131,
+        131,
+        129,
+        110,
+        114,
+        126
+      ],
+      "status": "Normal",
+      "good_direction": "up"
+    },
+    {
+      "group": "Review Rigor",
+      "metric": "Substantive review comments",
+      "display": "2,052",
+      "mom": "+19.1%",
+      "yoy": "+41.1%",
+      "median_12": "1,720",
+      "trend": [
+        1454,
+        1617,
+        1683,
+        1593,
+        1374,
+        1909,
+        2116,
+        2478,
+        1718,
+        2040,
+        1868,
+        1723,
+        2052
+      ],
+      "status": "Normal",
+      "good_direction": "up"
+    },
+    {
+      "group": "Review Rigor",
+      "metric": "Median unique ACKers per merged PR",
+      "display": "2.0",
+      "mom": "+0.0",
+      "yoy": "-1.0",
+      "median_12": "2.0",
+      "trend": [
+        3.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "status": "Normal",
+      "good_direction": "up"
+    },
+    {
+      "group": "Backlog",
+      "metric": "Open pull requests (month end)",
+      "display": "388",
+      "mom": "+6.9%",
+      "yoy": "+12.1%",
+      "median_12": "346",
+      "trend": [
+        346,
+        380,
+        336,
+        345,
+        346,
+        364,
+        354,
+        347,
+        349,
+        333,
+        341,
+        363,
+        388
+      ],
+      "status": "High",
+      "good_direction": "down"
+    },
+    {
+      "group": "Backlog",
+      "metric": "Open PRs older than 90 days",
+      "display": "192",
+      "mom": "+3.2%",
+      "yoy": "-10.3%",
+      "median_12": "210",
+      "trend": [
+        214,
+        236,
+        222,
+        216,
+        218,
+        215,
+        207,
+        182,
+        181,
+        165,
+        181,
+        186,
+        192
+      ],
+      "status": "Normal",
+      "good_direction": "down"
+    },
+    {
+      "group": "Governance",
+      "metric": "Top maintainer merge share",
+      "display": "53.7%",
+      "mom": "+18.4 pts",
+      "yoy": "-8.6 pts",
+      "median_12": "48.7%",
+      "trend": [
+        62.3,
+        54.1,
+        57.6,
+        70.3,
+        72.2,
+        39.9,
+        43.2,
+        55.6,
+        38.2,
+        39.3,
+        42.1,
+        35.3,
+        53.7
+      ],
+      "status": "Normal",
+      "good_direction": "down"
+    },
+    {
+      "group": "Governance",
+      "metric": "Self-merges (excl. backports & subtrees)",
+      "display": "6",
+      "mom": "+1",
+      "yoy": "-3",
+      "median_12": "6",
+      "trend": [
+        9,
+        15,
+        13,
+        11,
+        9,
+        1,
+        3,
+        6,
+        3,
+        4,
+        0,
+        5,
+        6
+      ],
+      "status": "Normal",
+      "good_direction": "down"
+    }
+  ],
+  "shipped": {
+    "items": [
+      {
+        "pr": 34075,
+        "title": "fees: Introduce Mempool Based Fee Estimation to reduce overestimation",
+        "short_title": "Introduce Mempool Based Fee Estimation to reduce overestimat\u2026",
+        "summary": "This PR introduces a mempool-based fee estimation algorithm to complement the node's existing history-based fee estimator.",
+        "domain": "Wallet & User Tools",
+        "subsystem": "Mempool",
+        "author": "ismaelsadeeq",
+        "author_name": "Abubakar Sadiq Ismail",
+        "reviews": 83,
+        "acks": 5,
+        "url": "https://github.com/bitcoin/bitcoin/pull/34075"
+      },
+      {
+        "pr": 35531,
+        "title": "txindex: hash keys and pack positions to reduce disk usage",
+        "short_title": "Txindex: hash keys and pack positions to reduce disk usage",
+        "summary": "Optimizes the transaction index (`txindex`) database by hashing keys and packing storage positions.",
+        "domain": "Performance & Optimization",
+        "subsystem": "Other",
+        "author": "andrewtoth",
+        "author_name": "Andrew Toth",
+        "reviews": 75,
+        "acks": 2,
+        "url": "https://github.com/bitcoin/bitcoin/pull/35531"
+      },
+      {
+        "pr": 35730,
+        "title": "http: limit connected HTTPRemoteClients",
+        "short_title": "Http: limit connected HTTPRemoteClients",
+        "summary": "This pull request introduces a limit on concurrent HTTP connections to protect the RPC and REST interfaces from resource exhaustion.",
+        "domain": "Security & Consensus",
+        "subsystem": "RPC & API",
+        "author": "pinheadmz",
+        "author_name": "Matthew Zipkin",
+        "reviews": 44,
+        "acks": 4,
+        "url": "https://github.com/bitcoin/bitcoin/pull/35730"
+      },
+      {
+        "pr": 35482,
+        "title": "fuzz: exercise the transaction-handling path in process_message(s)",
+        "short_title": "Exercise the transaction-handling path in process_message(s)",
+        "summary": "This PR expands fuzzer tests to specifically target transaction handling within `process_message(s)`, improving the resilience of P2P message process\u2026",
+        "domain": "Maintenance & Tech Debt",
+        "subsystem": "Testing & QA",
+        "author": "HowHsu",
+        "author_name": "Hao Xu",
+        "reviews": 43,
+        "acks": 1,
+        "url": "https://github.com/bitcoin/bitcoin/pull/35482"
+      },
+      {
+        "pr": 35877,
+        "title": "build: ci/doc win64-cross build via nix",
+        "short_title": "Build: ci/doc win64-cross build via nix",
+        "summary": "This PR introduces documentation and CI testing for cross-compiling 64-bit Windows binaries using the Nix package manager.",
+        "domain": "Maintenance & Tech Debt",
+        "subsystem": "Build & CI",
+        "author": "maflcko",
+        "author_name": "MarcoFalke",
+        "reviews": 39,
+        "acks": 2,
+        "url": "https://github.com/bitcoin/bitcoin/pull/35877"
+      }
+    ],
+    "domains": [
+      {
+        "name": "Wallet & User Tools",
+        "items": [
+          {
+            "pr": 34075,
+            "title": "fees: Introduce Mempool Based Fee Estimation to reduce overestimation",
+            "short_title": "Introduce Mempool Based Fee Estimation to reduce overestimat\u2026",
+            "summary": "This PR introduces a mempool-based fee estimation algorithm to complement the node's existing history-based fee estimator.",
+            "domain": "Wallet & User Tools",
+            "subsystem": "Mempool",
+            "author": "ismaelsadeeq",
+            "author_name": "Abubakar Sadiq Ismail",
+            "reviews": 83,
+            "acks": 5,
+            "url": "https://github.com/bitcoin/bitcoin/pull/34075"
+          }
+        ]
+      },
+      {
+        "name": "Performance & Optimization",
+        "items": [
+          {
+            "pr": 35531,
+            "title": "txindex: hash keys and pack positions to reduce disk usage",
+            "short_title": "Txindex: hash keys and pack positions to reduce disk usage",
+            "summary": "Optimizes the transaction index (`txindex`) database by hashing keys and packing storage positions.",
+            "domain": "Performance & Optimization",
+            "subsystem": "Other",
+            "author": "andrewtoth",
+            "author_name": "Andrew Toth",
+            "reviews": 75,
+            "acks": 2,
+            "url": "https://github.com/bitcoin/bitcoin/pull/35531"
+          }
+        ]
+      },
+      {
+        "name": "Security & Consensus",
+        "items": [
+          {
+            "pr": 35730,
+            "title": "http: limit connected HTTPRemoteClients",
+            "short_title": "Http: limit connected HTTPRemoteClients",
+            "summary": "This pull request introduces a limit on concurrent HTTP connections to protect the RPC and REST interfaces from resource exhaustion.",
+            "domain": "Security & Consensus",
+            "subsystem": "RPC & API",
+            "author": "pinheadmz",
+            "author_name": "Matthew Zipkin",
+            "reviews": 44,
+            "acks": 4,
+            "url": "https://github.com/bitcoin/bitcoin/pull/35730"
+          }
+        ]
+      },
+      {
+        "name": "Maintenance & Tech Debt",
+        "items": [
+          {
+            "pr": 35482,
+            "title": "fuzz: exercise the transaction-handling path in process_message(s)",
+            "short_title": "Exercise the transaction-handling path in process_message(s)",
+            "summary": "This PR expands fuzzer tests to specifically target transaction handling within `process_message(s)`, improving the resilience of P2P message process\u2026",
+            "domain": "Maintenance & Tech Debt",
+            "subsystem": "Testing & QA",
+            "author": "HowHsu",
+            "author_name": "Hao Xu",
+            "reviews": 43,
+            "acks": 1,
+            "url": "https://github.com/bitcoin/bitcoin/pull/35482"
+          },
+          {
+            "pr": 35877,
+            "title": "build: ci/doc win64-cross build via nix",
+            "short_title": "Build: ci/doc win64-cross build via nix",
+            "summary": "This PR introduces documentation and CI testing for cross-compiling 64-bit Windows binaries using the Nix package manager.",
+            "domain": "Maintenance & Tech Debt",
+            "subsystem": "Build & CI",
+            "author": "maflcko",
+            "author_name": "MarcoFalke",
+            "reviews": 39,
+            "acks": 2,
+            "url": "https://github.com/bitcoin/bitcoin/pull/35877"
+          }
         ]
       }
-    },
-    "work": {
-      "data": [
+    ],
+    "merged_count": 149,
+    "subsystem_trend": {
+      "months": [
+        "Aug '25",
+        "Sep '25",
+        "Oct '25",
+        "Nov '25",
+        "Dec '25",
+        "Jan '26",
+        "Feb '26",
+        "Mar '26",
+        "Apr '26",
+        "May '26",
+        "Jun '26",
+        "Jul '26",
+        "Aug '26"
+      ],
+      "series": {
+        "Testing & QA": [
+          16.9,
+          12.9,
+          18.2,
+          14.3,
+          21.1,
+          25.9,
+          19.5,
+          23.5,
+          20.2,
+          21.4,
+          25.2,
+          15.5,
+          26.2
+        ],
+        "Build & CI": [
+          16.9,
+          21.2,
+          27.3,
+          37.4,
+          15.6,
+          14.0,
+          22.9,
+          19.6,
+          11.2,
+          17.9,
+          25.2,
+          19.0,
+          14.1
+        ],
+        "Wallet": [
+          5.2,
+          4.7,
+          2.0,
+          2.2,
+          2.2,
+          7.7,
+          3.4,
+          8.5,
+          4.5,
+          11.6,
+          5.6,
+          6.0,
+          13.4
+        ],
+        "RPC & API": [
+          5.2,
+          4.7,
+          1.0,
+          2.2,
+          3.3,
+          1.4,
+          4.2,
+          5.9,
+          5.6,
+          2.7,
+          3.7,
+          4.3,
+          10.1
+        ],
+        "Node & Kernel": [
+          11.7,
+          8.2,
+          6.1,
+          13.2,
+          14.4,
+          5.6,
+          5.9,
+          4.6,
+          12.4,
+          8.0,
+          8.4,
+          12.1,
+          6.0
+        ],
+        "Docs & Contrib": [
+          10.4,
+          12.9,
+          9.1,
+          11.0,
+          12.2,
+          10.5,
+          8.5,
+          10.5,
+          12.4,
+          15.2,
+          1.9,
+          9.5,
+          8.1
+        ],
+        "Refactoring": [
+          3.9,
+          1.2,
+          2.0,
+          8.8,
+          10.0,
+          6.3,
+          5.9,
+          5.2,
+          6.7,
+          3.6,
+          5.6,
+          6.0,
+          6.7
+        ],
+        "Backports & Subtrees": [
+          9.1,
+          9.4,
+          9.1,
+          1.1,
+          2.2,
+          8.4,
+          4.2,
+          4.6,
+          4.5,
+          4.5,
+          3.7,
+          0.9,
+          4.7
+        ],
+        "Other": [
+          20.8,
+          24.7,
+          25.3,
+          9.9,
+          18.9,
+          20.3,
+          25.4,
+          17.6,
+          22.5,
+          15.2,
+          20.6,
+          26.7,
+          10.7
+        ]
+      },
+      "current": [
         {
-          "name": "Merge",
-          "value": 17472
-        },
-        {
-          "name": "Utilities",
-          "value": 12302
-        },
-        {
-          "name": "Tests",
-          "value": 11977
+          "name": "Testing & QA",
+          "pct": 26.2,
+          "count": 39
         },
         {
           "name": "Build & CI",
-          "value": 7240
+          "pct": 14.1,
+          "count": 21
         },
         {
           "name": "Wallet",
-          "value": 4916
+          "pct": 13.4,
+          "count": 20
         },
         {
-          "name": "Node & RPC",
-          "value": 4497
+          "name": "Other",
+          "pct": 10.7,
+          "count": 16
         },
         {
-          "name": "GUI",
-          "value": 3196
+          "name": "RPC & API",
+          "pct": 10.1,
+          "count": 15
         },
         {
-          "name": "Documentation",
-          "value": 3152
+          "name": "Docs & Contrib",
+          "pct": 8.1,
+          "count": 12
         },
         {
-          "name": "P2P Network",
-          "value": 2890
+          "name": "Refactoring",
+          "pct": 6.7,
+          "count": 10
         },
         {
-          "name": "Consensus",
-          "value": 2390
+          "name": "Node & Kernel",
+          "pct": 6.0,
+          "count": 9
         },
         {
-          "name": "Mempool",
-          "value": 896
-        },
-        {
-          "name": "Script",
-          "value": 800
-        },
-        {
-          "name": "Cryptography",
-          "value": 176
-        },
-        {
-          "name": "Database",
-          "value": 150
+          "name": "Backports & Subtrees",
+          "pct": 4.7,
+          "count": 7
         }
       ]
+    }
+  },
+  "roadmap": {
+    "initiatives": [
+      {
+        "name": "Multiprocess",
+        "issue": 28722,
+        "url": "https://github.com/bitcoin/bitcoin/issues/28722",
+        "champion": "Russell Yanofsky",
+        "done": 226,
+        "total": 273,
+        "pct": 83,
+        "updated": "2026-09-16"
+      },
+      {
+        "name": "Erlay",
+        "issue": 30249,
+        "url": "https://github.com/bitcoin/bitcoin/issues/30249",
+        "champion": "Sergi Delgado Segura",
+        "done": 9,
+        "total": 17,
+        "pct": 53,
+        "updated": "2026-07-29"
+      },
+      {
+        "name": "SENDTEMPLATE",
+        "issue": 33691,
+        "url": "https://github.com/bitcoin/bitcoin/issues/33691",
+        "champion": "Anthony Towns",
+        "done": 5,
+        "total": 13,
+        "pct": 38,
+        "updated": "2026-08-28"
+      },
+      {
+        "name": "Mining Interface",
+        "issue": 33777,
+        "url": "https://github.com/bitcoin/bitcoin/issues/33777",
+        "champion": "Sjors Provoost",
+        "done": 5,
+        "total": 13,
+        "pct": 38,
+        "updated": "2026-07-23"
+      },
+      {
+        "name": "MuSig2",
+        "issue": 31246,
+        "url": "https://github.com/bitcoin/bitcoin/issues/31246",
+        "champion": "Ava Chow",
+        "done": 14,
+        "total": 14,
+        "pct": 100,
+        "updated": "2026-04-29"
+      },
+      {
+        "name": "Cluster Mempool",
+        "issue": 30289,
+        "url": "https://github.com/bitcoin/bitcoin/issues/30289",
+        "champion": "Pieter Wuille",
+        "done": 33,
+        "total": 33,
+        "pct": 100,
+        "updated": "2026-02-25"
+      }
+    ],
+    "release": {
+      "version": "32.0",
+      "closed": 123,
+      "open": 4,
+      "total_prs": 627,
+      "rc": null,
+      "status": "In development",
+      "blockers": [
+        {
+          "pr": 36277,
+          "title": "net: always complete all initial private broadcast connections",
+          "author": "andrewtoth",
+          "url": "https://github.com/bitcoin/bitcoin/pull/36277"
+        },
+        {
+          "pr": 36303,
+          "title": "http: Log bytes received from client, use to replace receive-throttle regression test",
+          "author": "pinheadmz",
+          "url": "https://github.com/bitcoin/bitcoin/pull/36303"
+        },
+        {
+          "pr": 36340,
+          "title": "util: cap Sock::WaitMany timeout to fix -rpcclienttimeout=0 on macOS",
+          "author": "kriss39",
+          "url": "https://github.com/bitcoin/bitcoin/pull/36340"
+        },
+        {
+          "pr": 36427,
+          "title": "[32.x] More Backports",
+          "author": "fanquake",
+          "url": "https://github.com/bitcoin/bitcoin/pull/36427"
+        }
+      ],
+      "highlights": [
+        "For Wallet Developers & Users: This release significantly upgrades wallet capabilities with the implementation of BIP 370 PSBTv2, enabling more flexible and complex transaction construction, alongside new RPCs for granular HD key control and improved descriptor handling.",
+        "For Node Runners: Performance and resource efficiency are boosted through parallel fetching of transaction prevouts during block validation, leading to faster initial block download, reduced disk space for the transaction index (`txindex`), and optimized UTXO cache management with a new `dbcache` setter.",
+        "For Node Runners: Network robustness and privacy are enhanced by increasing inbound capacity for block-relay peers, shifting to global transaction rate limits to better resist flooding attacks, and improving privacy by preventing 'feeler' connections from participating in address relay."
+      ]
+    }
+  },
+  "people": {
+    "mergers": [
+      {
+        "handle": "fanquake",
+        "name": "Michael Ford",
+        "count": 80,
+        "share": 53.7
+      },
+      {
+        "handle": "sedited",
+        "name": "Sebastian Kung",
+        "count": 42,
+        "share": 28.2
+      },
+      {
+        "handle": "achow101",
+        "name": "Ava Chow",
+        "count": 19,
+        "share": 12.8
+      },
+      {
+        "handle": "hebasto",
+        "name": "Hennadii Stepanov",
+        "count": 8,
+        "share": 5.4
+      }
+    ],
+    "merges_attributed": 149,
+    "reviewers": [
+      {
+        "handle": "maflcko",
+        "name": "MarcoFalke",
+        "count": 208,
+        "share": 10.1
+      },
+      {
+        "handle": "sedited",
+        "name": "Sebastian Kung",
+        "count": 145,
+        "share": 7.1
+      },
+      {
+        "handle": "hebasto",
+        "name": "Hennadii Stepanov",
+        "count": 139,
+        "share": 6.8
+      },
+      {
+        "handle": "l0rinc",
+        "name": "Lorinc Pap",
+        "count": 125,
+        "share": 6.1
+      },
+      {
+        "handle": "fanquake",
+        "name": "Michael Ford",
+        "count": 95,
+        "share": 4.6
+      },
+      {
+        "handle": "jeanpablojp",
+        "name": "Jean Pablo",
+        "count": 82,
+        "share": 4.0
+      }
+    ],
+    "review_events": 2052,
+    "top3_review_share": 24.0,
+    "concentration": "Distributed",
+    "funnel": {
+      "active": 147,
+      "prev_active": 135,
+      "returned": 87,
+      "retention": 64.4,
+      "new_count": 11,
+      "new_handles": [
+        "Ameen-Alam",
+        "GuTS805",
+        "RuslanProgrammer",
+        "Shaurya2k06",
+        "cyb3ralbert",
+        "jeanpablojp",
+        "jpk68",
+        "laxmanacharya8",
+        "shuv-amp",
+        "vicjuma",
+        "winterrdog"
+      ],
+      "new_names": [
+        "ameen-alam",
+        "guts805",
+        "Ruslan Kasheparov",
+        "shaurya2k06",
+        "cyb3ralbert",
+        "Jean Pablo",
+        "jpk68",
+        "Laxman Acharya",
+        "Shuvam Pandey",
+        "Victor Oluoch",
+        "winterrdog"
+      ],
+      "openers_count": 26,
+      "openers_handles": [
+        "99code-hub",
+        "Alwoch",
+        "Avecci-Claussen",
+        "CapThunder19",
+        "Dontbyshai",
+        "GuTS805",
+        "KvantaMechanic",
+        "Lamcute-lan",
+        "PraneethGunas",
+        "Pushparaj-2022",
+        "SARK993369",
+        "Shaurya2k06",
+        "Shinruii",
+        "Turtlecute33",
+        "arfather",
+        "birdrust",
+        "btcpavao",
+        "cyb3ralbert",
+        "gotaku3737-sketch",
+        "laxmanacharya8",
+        "mercie-ux",
+        "patrickswedish",
+        "qtjg",
+        "riba2534",
+        "tialkan",
+        "xHope-tech"
+      ]
+    }
+  },
+  "frontier": {
+    "heatmap": {
+      "months": [
+        "Sep '25",
+        "Oct '25",
+        "Nov '25",
+        "Dec '25",
+        "Jan '26",
+        "Feb '26",
+        "Mar '26",
+        "Apr '26",
+        "May '26",
+        "Jun '26",
+        "Jul '26",
+        "Aug '26"
+      ],
+      "topics": [
+        {
+          "key": "quantum",
+          "name": "Quantum / PQC",
+          "values": [
+            3,
+            1,
+            7,
+            14,
+            14,
+            31,
+            11,
+            36,
+            39,
+            15,
+            13,
+            11
+          ]
+        },
+        {
+          "key": "mempool-fees",
+          "name": "Mempool & Fees",
+          "values": [
+            26,
+            11,
+            3,
+            6,
+            3,
+            10,
+            5,
+            6,
+            3,
+            5,
+            1,
+            3
+          ]
+        },
+        {
+          "key": "taproot",
+          "name": "Taproot",
+          "values": [
+            4,
+            16,
+            6,
+            2,
+            2,
+            2,
+            13,
+            10,
+            6,
+            4,
+            12,
+            3
+          ]
+        },
+        {
+          "key": "mining",
+          "name": "Mining / Stratum v2",
+          "values": [
+            3,
+            7,
+            7,
+            8,
+            4,
+            6,
+            4,
+            3,
+            2,
+            8,
+            14,
+            8
+          ]
+        },
+        {
+          "key": "covenants",
+          "name": "Covenants",
+          "values": [
+            5,
+            1,
+            3,
+            8,
+            5,
+            12,
+            6,
+            12,
+            4,
+            1,
+            1,
+            3
+          ]
+        },
+        {
+          "key": "utxo-sync",
+          "name": "UTXO & Sync",
+          "values": [
+            4,
+            9,
+            4,
+            5,
+            1,
+            2,
+            0,
+            1,
+            20,
+            5,
+            1,
+            2
+          ]
+        },
+        {
+          "key": "core-dev",
+          "name": "Core Dev",
+          "values": [
+            4,
+            14,
+            3,
+            0,
+            4,
+            1,
+            1,
+            3,
+            2,
+            4,
+            5,
+            1
+          ]
+        },
+        {
+          "key": "bip-process",
+          "name": "BIP Process",
+          "values": [
+            0,
+            1,
+            19,
+            5,
+            5,
+            1,
+            0,
+            1,
+            2,
+            2,
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    "threads": [
+      {
+        "title": "Pragmatic definition of consensus for light clients",
+        "source": "Delving",
+        "messages": 13,
+        "authors": [
+          "Nuh",
+          "Adam Gibson",
+          "cmp_ancp"
+        ],
+        "url": "https://delvingbitcoin.org/t/pragmatic-definition-of-consensus-for-light-clients/2842/1"
+      },
+      {
+        "title": "PQC output type discussion",
+        "source": "Delving",
+        "messages": 13,
+        "authors": [
+          "conduition",
+          "Pieter Wuille",
+          "Anthony Towns"
+        ],
+        "url": "https://delvingbitcoin.org/t/pqc-output-type-discussion/2749/5"
+      },
+      {
+        "title": "Universal opt-in replay protection?",
+        "source": "Delving",
+        "messages": 10,
+        "authors": [
+          "moonsettler",
+          "Anthony Towns",
+          "Garlo Nicon"
+        ],
+        "url": "https://delvingbitcoin.org/t/universal-opt-in-replay-protection/2792/1"
+      },
+      {
+        "title": "Motion to remove Luke Dashjr from BIP Editors",
+        "source": "Mailing List",
+        "messages": 9,
+        "authors": [
+          "Murch",
+          "Luke Dashjr",
+          "Jameson Lopp"
+        ],
+        "url": "https://gnusha.org/pi/bitcoindev/ad36522e-f479-4ac3-9904-cf00cfa8ec46@murch.one"
+      }
+    ],
+    "meetings": [
+      "Fuzzing WG Update: dergoegge noted no update but highlighted PR #36098.",
+      "Kernel WG Update: sedited reported no updates.",
+      "Benchmarking WG Update: l0rinc focused on identifying quadratic algorithms, citing findings from #35889, and is rebasing/reviewing similar issues.",
+      "QML GUI WG Update: johnny9dev reported new contributor uqlidi fixing bugs, pseudoramdom improving design, and epicleafies addressing Activity page feedback."
+    ],
+    "actions": [
+      "hebasto requested more eyes on bitcoin-core/gui-qml#871.",
+      "johnny9dev requested feedback and opinions on the QML GUI staging PR (bitcoin-core/gui-qml#871).",
+      "Moneyball will summarize the AI discussion, formulate detailed questions, and share them with Core developers for potential public communication."
+    ],
+    "volume": {
+      "threads": 77,
+      "messages": 203,
+      "by_source": {
+        "Delving": 36,
+        "Mailing List": 41
+      },
+      "meetings": 4
+    }
+  },
+  "metrics": {
+    "current": {
+      "merged": 149,
+      "gui_merged": 3,
+      "secp_merged": 13,
+      "ttm_p50": 5.8,
+      "ttm_p90": 98.1,
+      "reviewers": 126,
+      "review_comments": 2052,
+      "median_ackers": 2.0,
+      "open": 388,
+      "open_gt90": 192,
+      "open_gt365": 67,
+      "open_median_age": 90.0,
+      "top_merger_share": 53.7,
+      "self_merges": 6,
+      "new_contributors": 11,
+      "first_time_openers": 26
+    },
+    "previous": {
+      "merged": 116,
+      "gui_merged": 4,
+      "secp_merged": 15,
+      "ttm_p50": 8.5,
+      "ttm_p90": 151.2,
+      "reviewers": 114,
+      "review_comments": 1723,
+      "median_ackers": 2.0,
+      "open": 363,
+      "open_gt90": 186,
+      "open_gt365": 72,
+      "open_median_age": 95.0,
+      "top_merger_share": 35.3,
+      "self_merges": 5,
+      "new_contributors": 6,
+      "first_time_openers": 24
+    },
+    "year_ago": {
+      "merged": 77,
+      "gui_merged": 0,
+      "secp_merged": 5,
+      "ttm_p50": 5.1,
+      "ttm_p90": 94.8,
+      "reviewers": 117,
+      "review_comments": 1454,
+      "median_ackers": 3.0,
+      "open": 346,
+      "open_gt90": 214,
+      "open_gt365": 88,
+      "open_median_age": 124.5,
+      "top_merger_share": 62.3,
+      "self_merges": 9,
+      "new_contributors": 1,
+      "first_time_openers": 22
     }
   }
 }
