@@ -4,7 +4,7 @@ window.__SNAPSHOT__ = {
   "target_month": "2026-09",
   "target_month_formatted": "September 2026",
   "report_title": "State of Bitcoin Core \u2014 Monthly Intelligence Report",
-  "generated_at": "2026-10-05T12:31:29",
+  "generated_at": "2026-10-05T14:06:52",
   "data_through": "2026-10-05",
   "months": [
     "2025-09",
@@ -509,8 +509,9 @@ window.__SNAPSHOT__ = {
         "title": "wallet: Add importdescriptors interface",
         "short_title": "Wallet: Add importdescriptors interface",
         "summary": "This PR introduces a new interface for importing output descriptors into the wallet, making it easier and more reliable to manage complex sets of add\u2026",
-        "domain": "Wallet & User Tools",
+        "domain": "Wallet",
         "subsystem": "Wallet",
+        "impact": "Wallet & User Tools",
         "author": "polespinasa",
         "author_name": "Pol Espinasa",
         "reviews": 91,
@@ -522,8 +523,9 @@ window.__SNAPSHOT__ = {
         "title": "Wallet: Add `maxfeerate` wallet startup option",
         "short_title": "Wallet: Add `maxfeerate` wallet startup option",
         "summary": "This PR introduces the `maxfeerate` wallet startup configuration option to Bitcoin Core.",
-        "domain": "Wallet & User Tools",
+        "domain": "Wallet",
         "subsystem": "Wallet",
+        "impact": "Wallet & User Tools",
         "author": "ismaelsadeeq",
         "author_name": "Abubakar Sadiq Ismail",
         "reviews": 71,
@@ -535,8 +537,9 @@ window.__SNAPSHOT__ = {
         "title": "guix: Use UCRT runtime for Windows release binaries",
         "short_title": "Guix: Use UCRT runtime for Windows release binaries",
         "summary": "This PR updates the Guix build system to use the Universal C Runtime (UCRT) for Windows release binaries.",
-        "domain": "Maintenance & Tech Debt",
+        "domain": "Build & CI",
         "subsystem": "Build & CI",
+        "impact": "Maintenance & Tech Debt",
         "author": "hebasto",
         "author_name": "Hennadii Stepanov",
         "reviews": 65,
@@ -548,8 +551,9 @@ window.__SNAPSHOT__ = {
         "title": "wallet: Add addHDkey interface",
         "short_title": "Wallet: Add addHDkey interface",
         "summary": "This PR introduces a new `addHDkey` RPC interface to the wallet, allowing users to import individual Hierarchical Deterministic (HD) keys.",
-        "domain": "Wallet & User Tools",
+        "domain": "Wallet",
         "subsystem": "Wallet",
+        "impact": "Wallet & User Tools",
         "author": "pseudoramdom",
         "author_name": "pseudoramdom",
         "reviews": 51,
@@ -561,8 +565,9 @@ window.__SNAPSHOT__ = {
         "title": "Silent Payments: Implement bip352 (take 2)",
         "short_title": "Silent Payments: Implement bip352",
         "summary": "This PR advances the implementation of BIP352, the specification for Silent Payments, within Bitcoin Core.",
-        "domain": "Network & Privacy",
+        "domain": "Wallet",
         "subsystem": "Wallet",
+        "impact": "Network & Privacy",
         "author": "Eunovo",
         "author_name": "Oghenovo Usiwoma",
         "reviews": 51,
@@ -572,15 +577,16 @@ window.__SNAPSHOT__ = {
     ],
     "domains": [
       {
-        "name": "Wallet & User Tools",
+        "name": "Wallet",
         "items": [
           {
             "pr": 34861,
             "title": "wallet: Add importdescriptors interface",
             "short_title": "Wallet: Add importdescriptors interface",
             "summary": "This PR introduces a new interface for importing output descriptors into the wallet, making it easier and more reliable to manage complex sets of add\u2026",
-            "domain": "Wallet & User Tools",
+            "domain": "Wallet",
             "subsystem": "Wallet",
+            "impact": "Wallet & User Tools",
             "author": "polespinasa",
             "author_name": "Pol Espinasa",
             "reviews": 91,
@@ -592,8 +598,9 @@ window.__SNAPSHOT__ = {
             "title": "Wallet: Add `maxfeerate` wallet startup option",
             "short_title": "Wallet: Add `maxfeerate` wallet startup option",
             "summary": "This PR introduces the `maxfeerate` wallet startup configuration option to Bitcoin Core.",
-            "domain": "Wallet & User Tools",
+            "domain": "Wallet",
             "subsystem": "Wallet",
+            "impact": "Wallet & User Tools",
             "author": "ismaelsadeeq",
             "author_name": "Abubakar Sadiq Ismail",
             "reviews": 71,
@@ -605,49 +612,47 @@ window.__SNAPSHOT__ = {
             "title": "wallet: Add addHDkey interface",
             "short_title": "Wallet: Add addHDkey interface",
             "summary": "This PR introduces a new `addHDkey` RPC interface to the wallet, allowing users to import individual Hierarchical Deterministic (HD) keys.",
-            "domain": "Wallet & User Tools",
+            "domain": "Wallet",
             "subsystem": "Wallet",
+            "impact": "Wallet & User Tools",
             "author": "pseudoramdom",
             "author_name": "pseudoramdom",
             "reviews": 51,
             "acks": 5,
             "url": "https://github.com/bitcoin/bitcoin/pull/35436"
+          },
+          {
+            "pr": 35301,
+            "title": "Silent Payments: Implement bip352 (take 2)",
+            "short_title": "Silent Payments: Implement bip352",
+            "summary": "This PR advances the implementation of BIP352, the specification for Silent Payments, within Bitcoin Core.",
+            "domain": "Wallet",
+            "subsystem": "Wallet",
+            "impact": "Network & Privacy",
+            "author": "Eunovo",
+            "author_name": "Oghenovo Usiwoma",
+            "reviews": 51,
+            "acks": 3,
+            "url": "https://github.com/bitcoin/bitcoin/pull/35301"
           }
         ]
       },
       {
-        "name": "Maintenance & Tech Debt",
+        "name": "Build & CI",
         "items": [
           {
             "pr": 33593,
             "title": "guix: Use UCRT runtime for Windows release binaries",
             "short_title": "Guix: Use UCRT runtime for Windows release binaries",
             "summary": "This PR updates the Guix build system to use the Universal C Runtime (UCRT) for Windows release binaries.",
-            "domain": "Maintenance & Tech Debt",
+            "domain": "Build & CI",
             "subsystem": "Build & CI",
+            "impact": "Maintenance & Tech Debt",
             "author": "hebasto",
             "author_name": "Hennadii Stepanov",
             "reviews": 65,
             "acks": 3,
             "url": "https://github.com/bitcoin/bitcoin/pull/33593"
-          }
-        ]
-      },
-      {
-        "name": "Network & Privacy",
-        "items": [
-          {
-            "pr": 35301,
-            "title": "Silent Payments: Implement bip352 (take 2)",
-            "short_title": "Silent Payments: Implement bip352",
-            "summary": "This PR advances the implementation of BIP352, the specification for Silent Payments, within Bitcoin Core.",
-            "domain": "Network & Privacy",
-            "subsystem": "Wallet",
-            "author": "Eunovo",
-            "author_name": "Oghenovo Usiwoma",
-            "reviews": 51,
-            "acks": 3,
-            "url": "https://github.com/bitcoin/bitcoin/pull/35301"
           }
         ]
       }
@@ -670,187 +675,187 @@ window.__SNAPSHOT__ = {
         "Sep '26"
       ],
       "series": {
-        "Testing & QA": [
-          12.9,
-          18.2,
-          14.3,
-          21.1,
-          25.9,
-          19.5,
-          23.5,
-          20.2,
-          21.4,
-          25.2,
-          15.5,
-          26.2,
-          16.7
+        "Consensus & Validation": [
+          2.4,
+          1.0,
+          7.7,
+          7.8,
+          4.9,
+          4.2,
+          5.2,
+          10.1,
+          5.4,
+          3.7,
+          5.2,
+          2.7,
+          4.2
         ],
-        "Build & CI": [
-          21.2,
-          27.3,
-          37.4,
-          15.6,
-          14.0,
-          22.9,
-          19.6,
-          11.2,
-          17.9,
-          25.2,
-          19.0,
-          14.1,
-          15.3
+        "P2P & Network": [
+          9.4,
+          4.0,
+          3.3,
+          4.4,
+          5.6,
+          3.4,
+          3.9,
+          5.6,
+          1.8,
+          6.5,
+          10.3,
+          5.4,
+          5.6
         ],
         "Wallet": [
           4.7,
           2.0,
           2.2,
           2.2,
-          7.7,
-          3.4,
-          8.5,
-          4.5,
-          11.6,
-          5.6,
-          6.0,
-          13.4,
-          13.9
-        ],
-        "RPC & API": [
-          4.7,
-          1.0,
-          2.2,
-          3.3,
-          1.4,
+          9.1,
           4.2,
-          5.9,
+          9.2,
+          4.5,
+          13.4,
           5.6,
-          2.7,
-          3.7,
-          4.3,
-          10.1,
-          9.0
+          6.9,
+          14.1,
+          14.6
         ],
-        "Node & Kernel": [
-          8.2,
-          6.1,
-          13.2,
-          14.4,
-          5.6,
+        "RPC & Interfaces": [
           5.9,
-          4.6,
-          12.4,
-          8.0,
-          8.4,
-          12.1,
-          6.0,
+          2.0,
+          4.4,
+          3.3,
+          2.1,
+          4.2,
+          6.5,
+          3.4,
+          2.7,
+          4.7,
+          6.9,
+          10.7,
           9.7
         ],
-        "Docs & Contrib": [
-          12.9,
-          9.1,
-          11.0,
-          12.2,
-          10.5,
-          8.5,
-          10.5,
-          12.4,
-          15.2,
-          1.9,
-          9.5,
-          8.1,
-          6.9
+        "Node & Storage": [
+          4.7,
+          3.0,
+          5.5,
+          11.1,
+          5.6,
+          5.1,
+          2.6,
+          7.9,
+          5.4,
+          7.5,
+          10.3,
+          4.7,
+          8.3
         ],
-        "Refactoring": [
-          1.2,
-          2.0,
-          8.8,
+        "Tests & QA": [
+          23.5,
+          37.4,
+          31.9,
+          28.9,
+          30.1,
+          31.4,
+          34.0,
+          24.7,
+          31.2,
+          41.1,
+          21.6,
+          28.9,
+          24.3
+        ],
+        "Build & CI": [
+          11.8,
+          10.1,
+          19.8,
           10.0,
           6.3,
-          5.9,
-          5.2,
-          6.7,
-          3.6,
-          5.6,
-          6.0,
-          6.7,
-          2.1
-        ],
-        "Backports & Subtrees": [
-          9.4,
-          9.1,
-          1.1,
-          2.2,
+          10.2,
+          8.5,
+          4.5,
+          8.9,
           8.4,
-          4.2,
-          4.6,
-          4.5,
-          4.5,
-          3.7,
-          0.9,
-          4.7,
-          7.6
+          12.1,
+          8.1,
+          9.0
+        ],
+        "Maintenance": [
+          27.1,
+          29.3,
+          23.1,
+          23.3,
+          28.0,
+          21.2,
+          20.9,
+          30.3,
+          26.8,
+          14.0,
+          19.0,
+          20.1,
+          16.0
         ],
         "Other": [
-          24.7,
-          25.3,
-          9.9,
-          18.9,
-          20.3,
-          25.4,
-          17.6,
-          22.5,
-          15.2,
-          20.6,
-          26.7,
-          10.7,
-          18.8
+          10.6,
+          11.1,
+          2.2,
+          8.9,
+          8.4,
+          16.1,
+          9.2,
+          9.0,
+          4.5,
+          8.4,
+          7.8,
+          5.4,
+          8.3
         ]
       },
       "current": [
         {
-          "name": "Other",
-          "pct": 18.8,
-          "count": 27
+          "name": "Tests & QA",
+          "pct": 24.3,
+          "count": 35
         },
         {
-          "name": "Testing & QA",
-          "pct": 16.7,
-          "count": 24
-        },
-        {
-          "name": "Build & CI",
-          "pct": 15.3,
-          "count": 22
+          "name": "Maintenance",
+          "pct": 16.0,
+          "count": 23
         },
         {
           "name": "Wallet",
-          "pct": 13.9,
-          "count": 20
+          "pct": 14.6,
+          "count": 21
         },
         {
-          "name": "Node & Kernel",
+          "name": "RPC & Interfaces",
           "pct": 9.7,
           "count": 14
         },
         {
-          "name": "RPC & API",
+          "name": "Build & CI",
           "pct": 9.0,
           "count": 13
         },
         {
-          "name": "Backports & Subtrees",
-          "pct": 7.6,
-          "count": 11
+          "name": "Other",
+          "pct": 8.3,
+          "count": 12
         },
         {
-          "name": "Docs & Contrib",
-          "pct": 6.9,
-          "count": 10
+          "name": "Node & Storage",
+          "pct": 8.3,
+          "count": 12
         },
         {
-          "name": "Refactoring",
-          "pct": 2.1,
-          "count": 3
+          "name": "P2P & Network",
+          "pct": 5.6,
+          "count": 8
+        },
+        {
+          "name": "Consensus & Validation",
+          "pct": 4.2,
+          "count": 6
         }
       ]
     }

@@ -4,7 +4,7 @@
   "target_month": "2026-08",
   "target_month_formatted": "August 2026",
   "report_title": "State of Bitcoin Core \u2014 Monthly Intelligence Report",
-  "generated_at": "2026-10-05T11:51:45",
+  "generated_at": "2026-10-05T14:06:04",
   "data_through": "2026-10-05",
   "months": [
     "2025-08",
@@ -509,8 +509,9 @@
         "title": "fees: Introduce Mempool Based Fee Estimation to reduce overestimation",
         "short_title": "Introduce Mempool Based Fee Estimation to reduce overestimat\u2026",
         "summary": "This PR introduces a mempool-based fee estimation algorithm to complement the node's existing history-based fee estimator.",
-        "domain": "Wallet & User Tools",
-        "subsystem": "Mempool",
+        "domain": "Mempool & Policy",
+        "subsystem": "Mempool & Policy",
+        "impact": "Wallet & User Tools",
         "author": "ismaelsadeeq",
         "author_name": "Abubakar Sadiq Ismail",
         "reviews": 83,
@@ -522,8 +523,9 @@
         "title": "txindex: hash keys and pack positions to reduce disk usage",
         "short_title": "Txindex: hash keys and pack positions to reduce disk usage",
         "summary": "Optimizes the transaction index (`txindex`) database by hashing keys and packing storage positions.",
-        "domain": "Performance & Optimization",
-        "subsystem": "Other",
+        "domain": "Node & Storage",
+        "subsystem": "Node & Storage",
+        "impact": "Performance & Optimization",
         "author": "andrewtoth",
         "author_name": "Andrew Toth",
         "reviews": 75,
@@ -535,8 +537,9 @@
         "title": "http: limit connected HTTPRemoteClients",
         "short_title": "Http: limit connected HTTPRemoteClients",
         "summary": "This pull request introduces a limit on concurrent HTTP connections to protect the RPC and REST interfaces from resource exhaustion.",
-        "domain": "Security & Consensus",
-        "subsystem": "RPC & API",
+        "domain": "RPC & Interfaces",
+        "subsystem": "RPC & Interfaces",
+        "impact": "Security & Consensus",
         "author": "pinheadmz",
         "author_name": "Matthew Zipkin",
         "reviews": 44,
@@ -548,8 +551,9 @@
         "title": "fuzz: exercise the transaction-handling path in process_message(s)",
         "short_title": "Exercise the transaction-handling path in process_message(s)",
         "summary": "This PR expands fuzzer tests to specifically target transaction handling within `process_message(s)`, improving the resilience of P2P message process\u2026",
-        "domain": "Maintenance & Tech Debt",
-        "subsystem": "Testing & QA",
+        "domain": "Tests & QA",
+        "subsystem": "Tests & QA",
+        "impact": "Maintenance & Tech Debt",
         "author": "HowHsu",
         "author_name": "Hao Xu",
         "reviews": 43,
@@ -561,8 +565,9 @@
         "title": "build: ci/doc win64-cross build via nix",
         "short_title": "Build: ci/doc win64-cross build via nix",
         "summary": "This PR introduces documentation and CI testing for cross-compiling 64-bit Windows binaries using the Nix package manager.",
-        "domain": "Maintenance & Tech Debt",
+        "domain": "Build & CI",
         "subsystem": "Build & CI",
+        "impact": "Maintenance & Tech Debt",
         "author": "maflcko",
         "author_name": "MarcoFalke",
         "reviews": 39,
@@ -572,15 +577,16 @@
     ],
     "domains": [
       {
-        "name": "Wallet & User Tools",
+        "name": "Mempool & Policy",
         "items": [
           {
             "pr": 34075,
             "title": "fees: Introduce Mempool Based Fee Estimation to reduce overestimation",
             "short_title": "Introduce Mempool Based Fee Estimation to reduce overestimat\u2026",
             "summary": "This PR introduces a mempool-based fee estimation algorithm to complement the node's existing history-based fee estimator.",
-            "domain": "Wallet & User Tools",
-            "subsystem": "Mempool",
+            "domain": "Mempool & Policy",
+            "subsystem": "Mempool & Policy",
+            "impact": "Wallet & User Tools",
             "author": "ismaelsadeeq",
             "author_name": "Abubakar Sadiq Ismail",
             "reviews": 83,
@@ -590,15 +596,16 @@
         ]
       },
       {
-        "name": "Performance & Optimization",
+        "name": "Node & Storage",
         "items": [
           {
             "pr": 35531,
             "title": "txindex: hash keys and pack positions to reduce disk usage",
             "short_title": "Txindex: hash keys and pack positions to reduce disk usage",
             "summary": "Optimizes the transaction index (`txindex`) database by hashing keys and packing storage positions.",
-            "domain": "Performance & Optimization",
-            "subsystem": "Other",
+            "domain": "Node & Storage",
+            "subsystem": "Node & Storage",
+            "impact": "Performance & Optimization",
             "author": "andrewtoth",
             "author_name": "Andrew Toth",
             "reviews": 75,
@@ -608,15 +615,16 @@
         ]
       },
       {
-        "name": "Security & Consensus",
+        "name": "RPC & Interfaces",
         "items": [
           {
             "pr": 35730,
             "title": "http: limit connected HTTPRemoteClients",
             "short_title": "Http: limit connected HTTPRemoteClients",
             "summary": "This pull request introduces a limit on concurrent HTTP connections to protect the RPC and REST interfaces from resource exhaustion.",
-            "domain": "Security & Consensus",
-            "subsystem": "RPC & API",
+            "domain": "RPC & Interfaces",
+            "subsystem": "RPC & Interfaces",
+            "impact": "Security & Consensus",
             "author": "pinheadmz",
             "author_name": "Matthew Zipkin",
             "reviews": 44,
@@ -626,28 +634,35 @@
         ]
       },
       {
-        "name": "Maintenance & Tech Debt",
+        "name": "Tests & QA",
         "items": [
           {
             "pr": 35482,
             "title": "fuzz: exercise the transaction-handling path in process_message(s)",
             "short_title": "Exercise the transaction-handling path in process_message(s)",
             "summary": "This PR expands fuzzer tests to specifically target transaction handling within `process_message(s)`, improving the resilience of P2P message process\u2026",
-            "domain": "Maintenance & Tech Debt",
-            "subsystem": "Testing & QA",
+            "domain": "Tests & QA",
+            "subsystem": "Tests & QA",
+            "impact": "Maintenance & Tech Debt",
             "author": "HowHsu",
             "author_name": "Hao Xu",
             "reviews": 43,
             "acks": 1,
             "url": "https://github.com/bitcoin/bitcoin/pull/35482"
-          },
+          }
+        ]
+      },
+      {
+        "name": "Build & CI",
+        "items": [
           {
             "pr": 35877,
             "title": "build: ci/doc win64-cross build via nix",
             "short_title": "Build: ci/doc win64-cross build via nix",
             "summary": "This PR introduces documentation and CI testing for cross-compiling 64-bit Windows binaries using the Nix package manager.",
-            "domain": "Maintenance & Tech Debt",
+            "domain": "Build & CI",
             "subsystem": "Build & CI",
+            "impact": "Maintenance & Tech Debt",
             "author": "maflcko",
             "author_name": "MarcoFalke",
             "reviews": 39,
@@ -675,187 +690,187 @@
         "Aug '26"
       ],
       "series": {
-        "Testing & QA": [
-          16.9,
-          12.9,
-          18.2,
-          14.3,
-          21.1,
-          25.9,
-          19.5,
-          23.5,
-          20.2,
-          21.4,
-          25.2,
-          15.5,
-          26.2
+        "Consensus & Validation": [
+          6.5,
+          2.4,
+          1.0,
+          7.7,
+          7.8,
+          4.9,
+          4.2,
+          5.2,
+          10.1,
+          5.4,
+          3.7,
+          5.2,
+          2.7
         ],
-        "Build & CI": [
-          16.9,
-          21.2,
-          27.3,
-          37.4,
-          15.6,
-          14.0,
-          22.9,
-          19.6,
-          11.2,
-          17.9,
-          25.2,
-          19.0,
-          14.1
+        "P2P & Network": [
+          2.6,
+          9.4,
+          4.0,
+          3.3,
+          4.4,
+          5.6,
+          3.4,
+          3.9,
+          5.6,
+          1.8,
+          6.5,
+          10.3,
+          5.4
         ],
         "Wallet": [
-          5.2,
+          6.5,
           4.7,
           2.0,
           2.2,
           2.2,
-          7.7,
-          3.4,
-          8.5,
-          4.5,
-          11.6,
-          5.6,
-          6.0,
-          13.4
-        ],
-        "RPC & API": [
-          5.2,
-          4.7,
-          1.0,
-          2.2,
-          3.3,
-          1.4,
-          4.2,
-          5.9,
-          5.6,
-          2.7,
-          3.7,
-          4.3,
-          10.1
-        ],
-        "Node & Kernel": [
-          11.7,
-          8.2,
-          6.1,
-          13.2,
-          14.4,
-          5.6,
-          5.9,
-          4.6,
-          12.4,
-          8.0,
-          8.4,
-          12.1,
-          6.0
-        ],
-        "Docs & Contrib": [
-          10.4,
-          12.9,
           9.1,
-          11.0,
-          12.2,
-          10.5,
-          8.5,
-          10.5,
-          12.4,
-          15.2,
-          1.9,
-          9.5,
-          8.1
+          4.2,
+          9.2,
+          4.5,
+          13.4,
+          5.6,
+          6.9,
+          14.1
         ],
-        "Refactoring": [
+        "RPC & Interfaces": [
           3.9,
-          1.2,
-          2.0,
-          8.8,
-          10.0,
-          6.3,
           5.9,
-          5.2,
-          6.7,
-          3.6,
-          5.6,
-          6.0,
-          6.7
-        ],
-        "Backports & Subtrees": [
-          9.1,
-          9.4,
-          9.1,
-          1.1,
-          2.2,
-          8.4,
+          2.0,
+          4.4,
+          3.3,
+          2.1,
           4.2,
-          4.6,
-          4.5,
-          4.5,
-          3.7,
-          0.9,
+          6.5,
+          3.4,
+          2.7,
+          4.7,
+          6.9,
+          10.7
+        ],
+        "Node & Storage": [
+          7.8,
+          4.7,
+          3.0,
+          5.5,
+          11.1,
+          5.6,
+          5.1,
+          2.6,
+          7.9,
+          5.4,
+          7.5,
+          10.3,
           4.7
         ],
-        "Other": [
-          20.8,
+        "Tests & QA": [
+          23.4,
+          23.5,
+          37.4,
+          31.9,
+          28.9,
+          30.1,
+          31.4,
+          34.0,
           24.7,
-          25.3,
-          9.9,
-          18.9,
-          20.3,
-          25.4,
-          17.6,
-          22.5,
-          15.2,
-          20.6,
-          26.7,
-          10.7
+          31.2,
+          41.1,
+          21.6,
+          28.9
+        ],
+        "Build & CI": [
+          10.4,
+          11.8,
+          10.1,
+          19.8,
+          10.0,
+          6.3,
+          10.2,
+          8.5,
+          4.5,
+          8.9,
+          8.4,
+          12.1,
+          8.1
+        ],
+        "Maintenance": [
+          26.0,
+          27.1,
+          29.3,
+          23.1,
+          23.3,
+          28.0,
+          21.2,
+          20.9,
+          30.3,
+          26.8,
+          14.0,
+          19.0,
+          20.1
+        ],
+        "Other": [
+          13.0,
+          10.6,
+          11.1,
+          2.2,
+          8.9,
+          8.4,
+          16.1,
+          9.2,
+          9.0,
+          4.5,
+          8.4,
+          7.8,
+          5.4
         ]
       },
       "current": [
         {
-          "name": "Testing & QA",
-          "pct": 26.2,
-          "count": 39
+          "name": "Tests & QA",
+          "pct": 28.9,
+          "count": 43
         },
         {
-          "name": "Build & CI",
+          "name": "Maintenance",
+          "pct": 20.1,
+          "count": 30
+        },
+        {
+          "name": "Wallet",
           "pct": 14.1,
           "count": 21
         },
         {
-          "name": "Wallet",
-          "pct": 13.4,
-          "count": 20
-        },
-        {
-          "name": "Other",
+          "name": "RPC & Interfaces",
           "pct": 10.7,
           "count": 16
         },
         {
-          "name": "RPC & API",
-          "pct": 10.1,
-          "count": 15
-        },
-        {
-          "name": "Docs & Contrib",
+          "name": "Build & CI",
           "pct": 8.1,
           "count": 12
         },
         {
-          "name": "Refactoring",
-          "pct": 6.7,
-          "count": 10
+          "name": "Other",
+          "pct": 5.4,
+          "count": 8
         },
         {
-          "name": "Node & Kernel",
-          "pct": 6.0,
-          "count": 9
+          "name": "P2P & Network",
+          "pct": 5.4,
+          "count": 8
         },
         {
-          "name": "Backports & Subtrees",
+          "name": "Node & Storage",
           "pct": 4.7,
           "count": 7
+        },
+        {
+          "name": "Consensus & Validation",
+          "pct": 2.7,
+          "count": 4
         }
       ]
     }

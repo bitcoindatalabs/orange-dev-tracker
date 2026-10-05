@@ -8,6 +8,23 @@
     const SERIES = ['var(--series-1)', 'var(--series-2)', 'var(--series-3)', 'var(--series-4)',
         'var(--series-5)', 'var(--series-6)', 'var(--series-7)', 'var(--series-8)'];
     const SITE = 'orange-dev.bitcoindatalabs.org';
+    // Fixed colour per PR area (orange-dev-data scripts/utils/pr_area.py), stable month to month.
+    // Code areas get distinct hues; upkeep areas (tests, build, maintenance) are muted so feature
+    // work vs upkeep reads at a glance.
+    const AREA_COLORS = {
+        'Consensus & Validation': 'var(--series-1)',
+        'Mempool & Policy': 'var(--series-8)',
+        'P2P & Network': 'var(--series-2)',
+        'Wallet': 'var(--series-3)',
+        'Mining': 'var(--series-4)',
+        'RPC & Interfaces': 'var(--series-5)',
+        'Node & Storage': 'var(--series-7)',
+        'Tests & QA': 'var(--series-upkeep-1)',
+        'Build & CI': 'var(--series-upkeep-2)',
+        'Maintenance': 'var(--series-upkeep-3)',
+        'Other': 'var(--series-other)',
+    };
+    const areaColor = (name, i) => AREA_COLORS[name] || SERIES[i % SERIES.length];
 
     // ---------- helpers ----------
     const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
@@ -157,7 +174,7 @@
                 if (!v) return;
                 const y0 = top + (1 - (acc + v) / 100) * (h - top - bottom);
                 const hh = (v / 100) * (h - top - bottom);
-                const color = n === 'Other' ? 'var(--series-other)' : SERIES[ni % SERIES.length];
+                const color = areaColor(n, ni);
                 bars += `<rect x="${(left + mi * bw + gap / 2).toFixed(1)}" y="${y0.toFixed(1)}" width="${(bw - gap).toFixed(1)}"
                     height="${Math.max(0, hh - 2).toFixed(1)}" fill="${color}" rx="2"><title>${esc(m)} · ${esc(n)}: ${v.toFixed(1)}%</title></rect>`;
                 acc += v;
@@ -171,7 +188,7 @@
             return `<text class="axis-label" x="${left - 6}" y="${(y + 3).toFixed(1)}" text-anchor="end">${t}%</text>`;
         }).join('');
         const lastIdx = months.length - 1;
-        const legend = names.map((n, ni) => `<span><i style="background:${n === 'Other' ? 'var(--series-other)' : SERIES[ni % SERIES.length]}"></i>${esc(n)}<b>${trend.series[n][lastIdx].toFixed(0)}%</b></span>`).join('');
+        const legend = names.map((n, ni) => `<span><i style="background:${areaColor(n, ni)}"></i>${esc(n)}<b>${trend.series[n][lastIdx].toFixed(0)}%</b></span>`).join('');
         return `<svg width="100%" viewBox="0 0 ${w} ${h}" role="img" aria-label="Monthly share of merged PRs by subsystem">${ticks}${bars}</svg>
             <div class="legend">${legend}</div>`;
     }
@@ -182,19 +199,22 @@
             ${d.items.map((it) => `<div class="merge">
                 <div class="merge-title"><span class="pr">#${it.pr}</span>${esc(it.title)}</div>
                 ${it.summary ? `<div class="merge-sum">${esc(it.summary)}</div>` : ''}
-                <div class="merge-meta"><b>${it.reviews}</b> review comments · <b>${it.acks}</b> ACKs · by ${esc(it.author_name)}</div>
+                <div class="merge-meta">${it.impact ? `<span class="chip impact">${esc(it.impact)}</span>` : ''}<b>${it.reviews}</b> review comments · <b>${it.acks}</b> ACKs · by ${esc(it.author_name)}</div>
             </div>`).join('')}</div>`).join('');
-        const top = sh.subsystem_trend.current.filter((c) => c.name !== 'Other').slice(0, 2);
-        const focus = top.map((c) => `${c.name} (${c.pct.toFixed(0)}%)`).join(' and ');
+        // Headline: product-code work vs upkeep (tests, build, maintenance), led by the top code area
+        const UPKEEP = ['Tests & QA', 'Build & CI', 'Maintenance'];
+        const cur = sh.subsystem_trend.current;
+        const upkeep = cur.filter((c) => UPKEEP.includes(c.name)).reduce((a, c) => a + c.pct, 0);
+        const lead = cur.filter((c) => !UPKEEP.includes(c.name) && c.name !== 'Other')[0];
         return `${head(s, 3, 'What Got Shipped')}
-            <h1 class="slide-title small">${sh.merged_count} PRs merged; ${esc(focus)} took the largest share of merges</h1>
+            <h1 class="slide-title small">${sh.merged_count} PRs merged${lead ? `; ${esc(lead.name)} led product work (${lead.pct.toFixed(0)}%)` : ''}, while tests, build and maintenance were ${upkeep.toFixed(0)}% of merges</h1>
             <div class="slide-body">
                 <div class="grid split-55-45 fill">
                     <div class="card"><div class="card-label">Most-reviewed merges <span class="meta">by human review comments</span></div>${domains}</div>
-                    <div class="card"><div class="card-label">Subsystem share of merges <span class="meta">13 months · % of merged PRs</span></div>${stackedBars(sh.subsystem_trend)}</div>
+                    <div class="card"><div class="card-label">Area share of merges <span class="meta">13 months · % of merged PRs</span></div>${stackedBars(sh.subsystem_trend)}</div>
                 </div>
             </div>
-            ${foot(3, 'bitcoin/bitcoin only · subsystem from PR title prefix')}`;
+            ${foot(3, 'bitcoin/bitcoin only · area from maintainer GitHub labels, title prefix if unlabelled')}`;
     }
 
     // ---------- Slide 4: roadmap ----------

@@ -19,7 +19,11 @@
     --series-6: #008300;
     --series-7: #9085e9;
     --series-8: #e66767;
-    --series-other: #3a3f4b;
+    /* Upkeep areas (Tests & QA, Build & CI, Maintenance): muted slate steps */
+    --series-upkeep-1: #6b7486;
+    --series-upkeep-2: #545c6c;
+    --series-upkeep-3: #434a57;
+    --series-other: #30343d;
 
     --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
@@ -241,6 +245,7 @@ body.reports-body {
 .merge-sum { font-size: 12.5px; color: var(--muted-text); line-height: 1.4; margin-top: 3px; }
 .merge-meta { font-size: 11px; color: var(--dim-text); margin-top: 4px; }
 .merge-meta b { color: var(--muted-text); font-weight: 600; }
+.merge-meta .chip.impact { margin-right: 8px; font-size: 9.5px; padding: 1px 6px; vertical-align: 1px; }
 
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 11px; color: var(--muted-text); margin-top: 10px; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
