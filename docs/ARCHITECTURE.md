@@ -22,7 +22,7 @@ This is the area for rapid UI and functional prototyping. Each sub-folder is a "
 One-off research scripts, debug tools, and insight generators that are not part of the monthly production cron job.
 
 ### 5. Root Directory (The Showroom)
-Only stable, deployment-ready HTML files live in the root (e.g., `story.html`, `index.html`).
+Only stable, deployment-ready HTML files live in the root (e.g., `story.html`, `index.html`, and `reports.html` — the unlisted State of Bitcoin Core monthly report archive; its 6 slides are rendered by `scripts/reports.js`, which `report-card.html` also uses as the headless canvas Playwright captures for the social decks).
 
 ---
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>State of Bitcoin Core — Monthly Intelligence Report Card | Bitcoin Data Labs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- SSOT design tokens, generated from python/automation/shared/media/palettes.py ("obsidian") -->
+    <link rel="stylesheet" href="styles/palette.generated.css">
+    <link rel="stylesheet" href="styles/reports.css">
+</head>
+
+<!--
+    Dedicated headless screenshot canvas for Playwright.
+    Six 1200x800 slides captured by python/automation/jobs/orange_dev/monthly_state.py.
+    Slides 1-4 -> X / Nostr images; slides 1-6 -> LinkedIn PDF carousel.
+    Content is rendered by scripts/reports.js from data/monthly_snapshots/latest.js(on).
+-->
+<body class="reports-body report-theme" data-loaded="false">
+    <main class="slides-container">
+        <section class="report-slide slide-1" aria-label="Slide 1: Bottom line and KPIs"></section>
+        <section class="report-slide slide-2" aria-label="Slide 2: 13-month scorecard"></section>
+        <section class="report-slide slide-3" aria-label="Slide 3: What shipped"></section>
+        <section class="report-slide slide-4" aria-label="Slide 4: Roadmap and release"></section>
+        <section class="report-slide slide-5" aria-label="Slide 5: Contributors"></section>
+        <section class="report-slide slide-6" aria-label="Slide 6: Protocol frontier"></section>
+    </main>
+
+    <script src="data/monthly_snapshots/latest.js"></script>
+    <script src="scripts/reports.js"></script>
+</body>
+
+</html>

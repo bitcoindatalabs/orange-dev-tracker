@@ -1,128 +1,300 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>State of Bitcoin Core Archive | Bitcoin Data Labs</title>
-    
+    <meta name="robots" content="noindex, nofollow">
+    <title>State of Bitcoin Core — Monthly Intelligence Report | Orange Dev Tracker</title>
+    <meta name="description" content="Monthly intelligence review tracking Bitcoin Core engineering throughput, review velocity, release trajectory, and protocol discourse.">
+
+    <!-- Bitcoin Data Labs Font & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;0,6..72,800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Bitcoin Data Labs Shell Styles -->
     <link rel="stylesheet" href="https://bitcoindatalabs.org/styles/styles.css">
+
+    <!-- Local Report & Presentation Styles (report tokens are scoped to .report-theme) -->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/palette.generated.css">
     <link rel="stylesheet" href="styles/reports.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.min.js"></script>
+    <link rel="stylesheet" href="styles/reports-view.css">
+
+    <link rel="icon" type="image/png" href="https://bitcoindatalabs.org/favicon.png">
 </head>
 
-<body class="reports-body" data-loaded="false">
-    
-    <div class="slides-container">
-        
-        <!-- Slide 1: Cover & Headline -->
-        <div class="report-slide slide-1">
-            <div class="slide-header">
-                <div class="pre-title">BITCOIN DATA LABS • MACROECONOMIC DEVELOPMENT</div>
-                <h1 class="main-title">STATE OF BITCOIN CORE</h1>
-                <div class="date-range" id="cover-date">Loading...</div>
-            </div>
-            
-            <div class="branding-dots">
-                <div class="dot orange"></div>
-                <div class="dot blue"></div>
-                <div class="dot green"></div>
-            </div>
-            
-            <div class="metrics-grid headline-metrics">
-                <div class="metric-card">
-                    <div class="metric-label">ACTIVE CONTRIBUTORS (MONTH)</div>
-                    <div class="metric-value" id="val-active-devs">--</div>
-                    <div class="metric-sub">Merged code this month</div>
+<body class="has-fixed-header">
+    <div id="main-container">
+        <!-- Bitcoin Data Labs Header (standard shell; reports is unlisted from the top nav tabs) -->
+        <div id="header"></div>
+
+        <div id="app-content">
+            <main class="rv report-theme" id="report-view">
+                <header class="rv-head">
+                    <div class="rv-title-group">
+                        <div class="rv-kicker">State of Bitcoin Core</div>
+                        <h1 class="rv-title">Monthly Intelligence Report</h1>
+                        <p class="rv-lede">Six slides on Bitcoin Core development: throughput, review, the release train, contributors and protocol discussion. Published on the 1st of every month.</p>
+                    </div>
+
+                    <div class="rv-actions">
+                        <label class="rv-select">
+                            <span class="rv-visually-hidden">Report month</span>
+                            <select id="month-select" aria-label="Report month"></select>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </label>
+                        <a id="btn-download-pdf" class="rv-btn-ghost" target="_blank" rel="noopener noreferrer" hidden>
+                            <i class="fas fa-arrow-down" aria-hidden="true"></i> PDF
+                        </a>
+                    </div>
+                </header>
+
+                <section class="rv-stage report-theme" id="rv-stage" aria-label="Report slides">
+                    <div class="rv-scroll" id="rv-scroll">
+                        <div class="rv-frame" id="slides-viewport">
+                            <div class="slides-wrapper" id="slides-wrapper">
+                                <section class="report-slide slide-1 active" aria-label="Slide 1: Bottom line and KPIs"></section>
+                                <section class="report-slide slide-2" aria-label="Slide 2: 13-month scorecard"></section>
+                                <section class="report-slide slide-3" aria-label="Slide 3: What shipped"></section>
+                                <section class="report-slide slide-4" aria-label="Slide 4: Roadmap and release"></section>
+                                <section class="report-slide slide-5" aria-label="Slide 5: Contributors"></section>
+                                <section class="report-slide slide-6" aria-label="Slide 6: Protocol frontier"></section>
+                            </div>
+                            <button type="button" class="rv-tap-hint" id="btn-tap-expand">
+                                <i class="fas fa-up-right-and-down-left-from-center" aria-hidden="true"></i> Tap to enlarge
+                            </button>
+                        </div>
+                    </div>
+
+                    <nav class="rv-controls" aria-label="Slide navigation">
+                        <button type="button" class="rv-icon-btn" id="btn-prev" aria-label="Previous slide">
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <div class="rv-tabs" id="slide-tabs">
+                            <button type="button" class="rv-tab active" data-slide="1"><span>01</span> KPIs</button>
+                            <button type="button" class="rv-tab" data-slide="2"><span>02</span> Scorecard</button>
+                            <button type="button" class="rv-tab" data-slide="3"><span>03</span> What Shipped</button>
+                            <button type="button" class="rv-tab" data-slide="4"><span>04</span> Roadmap</button>
+                            <button type="button" class="rv-tab" data-slide="5"><span>05</span> Contributors</button>
+                            <button type="button" class="rv-tab" data-slide="6"><span>06</span> Protocol</button>
+                        </div>
+                        <button type="button" class="rv-icon-btn" id="btn-next" aria-label="Next slide">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                        <span class="rv-counter" id="slide-counter" aria-live="polite">1 / 6</span>
+                        <button type="button" class="rv-icon-btn" id="btn-expand" aria-label="Enlarge slides" title="Enlarge (F)">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </button>
+                    </nav>
+                </section>
+
+                <div class="rv-foot">
+                    <span>Published monthly by <a href="https://bitcoindatalabs.org" target="_blank" rel="noopener">Bitcoin Data Labs</a> · data from GitHub, Delving Bitcoin and the bitcoindev mailing list</span>
+                    <a href="index.html" class="rv-link">Explore the live dashboards <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-label">NEW CONTRIBUTORS (MONTH)</div>
-                    <div class="metric-value" id="val-new-devs">--</div>
-                    <div class="metric-sub">Successfully onboarded</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">TOTAL PULL REQUESTS</div>
-                    <div class="metric-value" id="val-total-prs">--</div>
-                    <div class="metric-sub">Lifetime history</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">LIFETIME CONTRIBUTORS</div>
-                    <div class="metric-value" id="val-total-devs">--</div>
-                    <div class="metric-sub">Across all subsystems</div>
-                </div>
-            </div>
-            
-            <div class="slide-footer">
-                <div>Bitcoin Core Development Health • tracker.bitcoindatalabs.org</div>
-                <div>bitcoindatalabs.org</div>
-            </div>
+            </main>
         </div>
 
-        <!-- Slide 2: Active Contributor Growth (Chart) -->
-        <div class="report-slide slide-2">
-            <div class="slide-header small">
-                <div class="pre-title">CONTRIBUTOR DYNAMICS</div>
-                <h1 class="main-title">ACTIVE CONTRIBUTOR BASE</h1>
-                <div class="date-range" id="s2-date">Loading...</div>
-            </div>
-            <div class="branding-dots"><div class="dot orange"></div><div class="dot blue"></div><div class="dot green"></div></div>
-            
-            <div class="chart-container-large">
-                <canvas id="active-devs-chart"></canvas>
-            </div>
-            
-            <div class="slide-footer">
-                <div>Monthly Active Contributors (trailing 2 years)</div>
-                <div>bitcoindatalabs.org</div>
-            </div>
-        </div>
-
-        <!-- Slide 3: Tech Stack Distribution -->
-        <div class="report-slide slide-3">
-            <div class="slide-header small">
-                <div class="pre-title">SUBSYSTEM FOCUS</div>
-                <h1 class="main-title">DEVELOPMENT BY DOMAIN</h1>
-                <div class="date-range" id="s3-date">Loading...</div>
-            </div>
-            <div class="branding-dots"><div class="dot orange"></div><div class="dot blue"></div><div class="dot green"></div></div>
-            
-            <div class="metrics-list" id="stack-metrics">
-                <!-- Injected via JS -->
-            </div>
-            
-            <div class="slide-footer">
-                <div>Pull request distribution across protocol subsystems</div>
-                <div>bitcoindatalabs.org</div>
-            </div>
-        </div>
-        
-        <!-- Generate slides 4-10 similarly, or use JS to inject -->
-        <!-- Keeping it simple for the MVP screenshot capture by just stubbing out the divs so Playwright can find them -->
-        <div class="report-slide slide-4"><h1 class="main-title">CONTRIBUTOR RETENTION</h1><div class="slide-footer"><div>bitcoindatalabs.org</div></div></div>
-        <div class="report-slide slide-5"><h1 class="main-title">CODEBASE VOLUME</h1><div class="slide-footer"><div>bitcoindatalabs.org</div></div></div>
-        <div class="report-slide slide-6"><h1 class="main-title">REVIEW VELOCITY</h1><div class="slide-footer"><div>bitcoindatalabs.org</div></div></div>
-        <div class="report-slide slide-7"><h1 class="main-title">DECENTRALIZATION METRICS</h1><div class="slide-footer"><div>bitcoindatalabs.org</div></div></div>
-        <div class="report-slide slide-8"><h1 class="main-title">MAINTAINER LOAD</h1><div class="slide-footer"><div>bitcoindatalabs.org</div></div></div>
-        <div class="report-slide slide-9"><h1 class="main-title">GEOGRAPHIC DISTRIBUTION</h1><div class="slide-footer"><div>bitcoindatalabs.org</div></div></div>
-        <div class="report-slide slide-10">
-            <h1 class="main-title">EXPLORE THE DATA</h1>
-            <div class="chart-container-large" style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:400px; text-align:center;">
-                <p style="font-size:32px; font-family:'Newsreader'; color:#1A1D24;">Bitcoin's protocol development is transparent, open-source, and verifiable.</p>
-                <p style="font-size:24px; color:#555; margin-top:20px;">tracker.bitcoindatalabs.org</p>
-            </div>
-            <div class="slide-footer"><div>bitcoindatalabs.org</div></div>
-        </div>
-
+        <!-- Bitcoin Data Labs Footer -->
+        <div id="footer"></div>
     </div>
-    
+
+    <!-- Bitcoin Data Labs App Components -->
+    <script src="https://bitcoindatalabs.org/components/app-components.js"></script>
+    <script src="js/app-config.js"></script>
+    <script src="js/utils.js"></script>
+
+    <!-- Slide snapshot & rendering engine (shared with the report-card.html capture canvas) -->
+    <script src="data/monthly_snapshots/latest.js"></script>
     <script src="scripts/reports.js"></script>
+
+    <!-- Viewer: month picker, slide navigation, responsive scaling, enlarge mode -->
+    <script>
+        (function () {
+            'use strict';
+
+            const SLIDE_W = 1200, SLIDE_H = 800, TOTAL = 6;
+            const $ = (id) => document.getElementById(id);
+            const stage = $('rv-stage'), scroller = $('rv-scroll'), frame = $('slides-viewport'), wrapper = $('slides-wrapper');
+            const monthSelect = $('month-select'), downloadBtn = $('btn-download-pdf');
+            const btnPrev = $('btn-prev'), btnNext = $('btn-next'), btnExpand = $('btn-expand'), counter = $('slide-counter');
+            const tabs = Array.from(document.querySelectorAll('.rv-tab'));
+
+            let manifest = [];
+            let month = null;
+            let slide = 1;
+
+            // ---------- scaling ----------
+            function isNarrow() {
+                return window.innerWidth < 900;
+            }
+
+            function fit() {
+                let scale;
+                if (stage.classList.contains('is-expanded')) {
+                    const w = scroller.clientWidth - 24;
+                    const h = scroller.clientHeight - 24;
+                    // Narrow screens keep a readable minimum and pan; wide screens fit the whole slide
+                    scale = isNarrow() ? Math.max(w / SLIDE_W, 0.6) : Math.min(w / SLIDE_W, h / SLIDE_H);
+                    frame.style.width = `${Math.round(SLIDE_W * scale)}px`;
+                } else {
+                    frame.style.width = '';
+                    scale = frame.clientWidth / SLIDE_W;
+                }
+                if (!scale) return;
+                wrapper.style.transform = `scale(${scale})`;
+                frame.style.height = `${Math.round(SLIDE_H * scale)}px`;
+            }
+
+            // ---------- navigation ----------
+            function syncUrl() {
+                if (!history.replaceState || !month) return;
+                history.replaceState(null, '', `?month=${month}&slide=${slide}`);
+            }
+
+            function go(n) {
+                slide = Math.min(TOTAL, Math.max(1, n));
+                wrapper.querySelectorAll('.report-slide').forEach((el, i) => el.classList.toggle('active', i + 1 === slide));
+                tabs.forEach((t) => {
+                    const on = Number(t.dataset.slide) === slide;
+                    t.classList.toggle('active', on);
+                    t.setAttribute('aria-current', on ? 'true' : 'false');
+                    if (on) {
+                        // Keep the active tab visible in the strip without scrolling the page
+                        const strip = t.parentElement;
+                        if (t.offsetLeft < strip.scrollLeft) strip.scrollLeft = t.offsetLeft;
+                        else if (t.offsetLeft + t.offsetWidth > strip.scrollLeft + strip.clientWidth) {
+                            strip.scrollLeft = t.offsetLeft + t.offsetWidth - strip.clientWidth;
+                        }
+                    }
+                });
+                counter.textContent = `${slide} / ${TOTAL}`;
+                btnPrev.disabled = slide === 1;
+                btnNext.disabled = slide === TOTAL;
+                syncUrl();
+            }
+
+            // While enlarged, the stage is moved to <body> so no shell stacking context (fixed header,
+            // feedback bubble) can sit on top of it; a placeholder keeps its spot in the page.
+            const placeholder = document.createComment('rv-stage');
+            function setExpanded(on) {
+                if (on === stage.classList.contains('is-expanded')) return;
+                if (on) {
+                    stage.parentNode.insertBefore(placeholder, stage);
+                    document.body.appendChild(stage);
+                } else if (placeholder.parentNode) {
+                    placeholder.parentNode.replaceChild(stage, placeholder);
+                }
+                stage.classList.toggle('is-expanded', on);
+                document.documentElement.classList.toggle('rv-lock', on);
+                btnExpand.setAttribute('aria-label', on ? 'Close enlarged view' : 'Enlarge slides');
+                btnExpand.querySelector('i').className = on ? 'fas fa-xmark' : 'fas fa-expand';
+                scroller.scrollTo(0, 0);
+                fit();
+            }
+
+            // ---------- months ----------
+            function entryFor(m) {
+                return manifest.find((e) => e.month === m) || null;
+            }
+
+            function syncMonthUi() {
+                const entry = entryFor(month);
+                if (!Array.from(monthSelect.options).some((o) => o.value === month)) {
+                    monthSelect.add(new Option(entry ? entry.name : month, month));
+                }
+                monthSelect.value = month;
+                if (entry && entry.pdf) {
+                    downloadBtn.href = entry.pdf;
+                    downloadBtn.hidden = false;
+                } else {
+                    downloadBtn.hidden = true;
+                }
+            }
+
+            async function showMonth(m) {
+                try {
+                    const snap = await window.loadReportSnapshot(m);
+                    window.renderReportSlides(snap);
+                    month = snap.target_month;
+                } catch (err) {
+                    console.error('[reports] month switch failed', err);
+                    monthSelect.value = month;
+                    return;
+                }
+                syncMonthUi();
+                go(1);
+                fit();
+            }
+
+            async function loadManifest() {
+                try {
+                    const res = await fetch('data/monthly_snapshots/manifest.json', { cache: 'no-store' });
+                    if (res.ok) manifest = await res.json();
+                } catch (e) {
+                    manifest = [];
+                }
+                monthSelect.innerHTML = manifest.map((m) => `<option value="${m.month}">${m.name || m.month}</option>`).join('');
+            }
+
+            // ---------- events ----------
+            btnPrev.addEventListener('click', () => go(slide - 1));
+            btnNext.addEventListener('click', () => go(slide + 1));
+            $('slide-tabs').addEventListener('click', (e) => {
+                const t = e.target.closest('.rv-tab');
+                if (t) go(Number(t.dataset.slide));
+            });
+            monthSelect.addEventListener('change', (e) => showMonth(e.target.value));
+            btnExpand.addEventListener('click', () => setExpanded(!stage.classList.contains('is-expanded')));
+            $('btn-tap-expand').addEventListener('click', (e) => { e.stopPropagation(); setExpanded(true); });
+            frame.addEventListener('click', () => {
+                if (window.innerWidth <= 760 && !stage.classList.contains('is-expanded')) setExpanded(true);
+            });
+
+            window.addEventListener('keydown', (e) => {
+                if (['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName)) return;
+                if (e.key === 'ArrowRight') { go(slide + 1); e.preventDefault(); }
+                else if (e.key === 'ArrowLeft') { go(slide - 1); e.preventDefault(); }
+                else if (e.key === 'Escape' && stage.classList.contains('is-expanded')) setExpanded(false);
+                else if (e.key === 'f' || e.key === 'F') setExpanded(!stage.classList.contains('is-expanded'));
+            });
+
+            // Swipe to change slides — unless the enlarged slide is wider than the screen (then a swipe pans)
+            let touchX = null;
+            frame.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].screenX; }, { passive: true });
+            frame.addEventListener('touchend', (e) => {
+                if (touchX === null) return;
+                const dx = touchX - e.changedTouches[0].screenX;
+                touchX = null;
+                if (scroller.scrollWidth > scroller.clientWidth + 2 || Math.abs(dx) < 40) return;
+                go(slide + (dx > 0 ? 1 : -1));
+            }, { passive: true });
+
+            window.addEventListener('resize', fit);
+
+            // reports.js has rendered the ?month= (or latest) snapshot
+            window.addEventListener('reports-loaded', async (e) => {
+                await loadManifest();
+                const snap = e.detail && e.detail.snapshot;
+                if (!snap && manifest.length) {
+                    // Unknown ?month= in a shared link: fall back to the newest report
+                    await showMonth(manifest[0].month);
+                    return;
+                }
+                month = snap ? snap.target_month : null;
+                if (month) syncMonthUi();
+                const params = new URLSearchParams(window.location.search);
+                go(parseInt(params.get('slide'), 10) || 1);
+                fit();
+                if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+            });
+
+            fit();
+        })();
+    </script>
 </body>
+
 </html>

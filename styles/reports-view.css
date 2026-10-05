@@ -1,0 +1,338 @@
+/*
+ * reports-view.css — the embedded slide viewer on reports.html.
+ * Colours come from the report tokens (palette.generated.css, scoped to .report-theme), so the
+ * viewer chrome and the slides share one palette. The slide sits inset in a lighter "stage" with
+ * a ring and shadow, so it reads as an embedded product rather than part of the page background.
+ */
+
+/* Tokens live on .rv-stage too: in enlarged mode the stage is moved to <body>, outside .rv */
+.rv, .rv-stage {
+    --rv-stage-bg: color-mix(in srgb, var(--badge-bg) 55%, var(--card-bg));
+    --rv-line: var(--card-border);
+    --rv-hover: color-mix(in srgb, var(--text-color) 7%, transparent);
+    --rv-radius: 16px;
+    font-family: var(--font-sans);
+    color: var(--text-color);
+}
+
+.rv {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-family: var(--font-sans);
+    color: var(--text-color);
+}
+
+.rv-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- Header ---------- */
+.rv-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+
+.rv-title-group { min-width: 0; max-width: 720px; }
+
+.rv-kicker {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+.rv-title {
+    margin: 4px 0 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--text-strong, var(--text-color));
+}
+
+.rv-lede {
+    margin: 6px 0 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--muted-text);
+}
+
+.rv-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rv-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.rv-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--card-bg);
+    border: 1px solid var(--rv-line);
+    color: var(--text-color);
+    font: 600 0.88rem var(--font-sans);
+    padding: 8px 34px 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.rv-select i {
+    position: absolute;
+    right: 12px;
+    font-size: 0.7rem;
+    color: var(--muted-text);
+    pointer-events: none;
+}
+
+.rv-select select:hover { border-color: color-mix(in srgb, var(--text-color) 20%, var(--rv-line)); }
+
+.rv-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border: 1px solid var(--rv-line);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted-text);
+    font: 600 0.88rem var(--font-sans);
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.rv-btn-ghost[hidden] { display: none; }
+
+.rv-btn-ghost:hover {
+    color: var(--text-color);
+    background: var(--rv-hover);
+    border-color: color-mix(in srgb, var(--text-color) 20%, var(--rv-line));
+}
+
+.rv-select select:focus-visible,
+.rv-btn-ghost:focus-visible,
+.rv-icon-btn:focus-visible,
+.rv-tab:focus-visible,
+.rv-tap-hint:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ---------- Stage: lighter surface the slide sits in ---------- */
+.rv-stage {
+    background: var(--rv-stage-bg);
+    border: 1px solid var(--rv-line);
+    border-radius: var(--rv-radius);
+    padding: 16px 16px 10px;
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--text-color) 4%, transparent) inset;
+}
+
+.rv-scroll { position: relative; }
+
+.rv-frame {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--bg-color);
+    box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--text-color) 7%, transparent),
+        0 24px 60px -18px rgba(0, 0, 0, 0.75);
+}
+
+.slides-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1200px;
+    height: 800px;
+    transform-origin: top left;
+}
+
+.slides-wrapper .report-slide {
+    display: none;
+    width: 1200px;
+    height: 800px;
+    border: 0;
+}
+
+.slides-wrapper .report-slide.active { display: flex; }
+
+/* ---------- Controls (below the slide, never on top of it) ---------- */
+.rv-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+}
+
+.rv-tabs {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.rv-tabs::-webkit-scrollbar { display: none; }
+
+.rv-tab {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--muted-text);
+    font: 600 0.8rem var(--font-sans);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.rv-tab span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--dim-text);
+}
+
+.rv-tab:hover { color: var(--text-color); background: var(--rv-hover); }
+
+.rv-tab.active {
+    color: var(--text-color);
+    background: var(--rv-hover);
+    box-shadow: inset 0 -2px 0 var(--accent-color);
+}
+
+.rv-tab.active span { color: var(--accent-color); }
+
+.rv-icon-btn {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--rv-line);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted-text);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.rv-icon-btn:hover:not(:disabled) { color: var(--text-color); background: var(--rv-hover); }
+.rv-icon-btn:disabled { opacity: 0.35; cursor: default; }
+
+.rv-counter {
+    flex: none;
+    min-width: 44px;
+    text-align: center;
+    font: 600 0.78rem var(--font-mono);
+    color: var(--dim-text);
+}
+
+.rv-tap-hint { display: none; }
+
+/* ---------- Enlarged mode (all devices; no Fullscreen API, so it also works on iPhone) ---------- */
+html.rv-lock, html.rv-lock body { overflow: hidden; }
+
+.rv-stage.is-expanded {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+    background: color-mix(in srgb, var(--bg-color) 94%, transparent);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+}
+
+.rv-stage.is-expanded .rv-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 12px;
+    display: flex;
+}
+
+.rv-stage.is-expanded .rv-frame { margin: auto; flex: none; }
+
+.rv-stage.is-expanded .rv-controls {
+    padding: 10px 16px 12px;
+    border-top: 1px solid var(--rv-line);
+    background: var(--card-bg);
+}
+
+.rv-stage.is-expanded .rv-tap-hint { display: none !important; }
+
+/* ---------- Footer line ---------- */
+.rv-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 0.85rem;
+    color: var(--muted-text);
+}
+
+.rv-foot a { color: var(--text-color); font-weight: 600; text-decoration: none; }
+.rv-foot a:hover { text-decoration: underline; }
+.rv-link { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 760px) {
+    .rv { padding: 18px 16px 48px; gap: 14px; }
+    .rv-title { font-size: 1.3rem; }
+    .rv-lede { font-size: 0.86rem; }
+    .rv-actions { width: 100%; }
+    .rv-select, .rv-select select { flex: 1; width: 100%; }
+    .rv-stage { padding: 10px 10px 6px; border-radius: 12px; }
+    .rv-frame { border-radius: 6px; }
+    .rv-tab { padding: 6px 8px; }
+    .rv-counter { display: none; }
+
+    /* The scaled slide is too small to read in place: invite a tap into enlarged mode */
+    .rv-tap-hint {
+        display: inline-flex;
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        z-index: 5;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border: 1px solid var(--rv-line);
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+        color: var(--text-color);
+        font: 600 0.75rem var(--font-sans);
+        cursor: pointer;
+    }
+}
